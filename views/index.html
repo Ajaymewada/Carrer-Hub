@@ -3047,5 +3047,17 @@
   <script src="/unpkg.com/leaflet%401.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
   <script src="js/vendors.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const userData = localStorage.getItem("user");
+
+        // ✅ Check if user is logged in
+        if (userData) {
+          // alert("You must log in first!");
+          window.location.href = "/home";
+          return;
+        }
+    });
+  </script>
 </body>
 </html>
