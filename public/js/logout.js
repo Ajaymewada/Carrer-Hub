@@ -6,12 +6,16 @@
 //   });
 document.addEventListener("DOMContentLoaded", () => {
   const logoutBtn = document.getElementById("logout-btn");
+  if (!logoutBtn) return;
 
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", (e) => {
-      e.preventDefault(); // stops <a href="#"> from refreshing
-      localStorage.removeItem("user");
-      window.location.replace("/");
-    });
-  }
+  const handleLogout = (e) => {
+    e.preventDefault();
+    console.log("Logout triggered"); // For testing
+    localStorage.removeItem("user");
+    sessionStorage.clear();
+    window.location.href = "/";
+  };
+
+  logoutBtn.addEventListener("click", handleLogout);
+  logoutBtn.addEventListener("touchend", handleLogout);
 });
