@@ -347,7 +347,9 @@
             </div>
           </div>
 
-       <section class="layout-pt-md layout-pb-md">
+
+      <div id="desktopview">
+      <section class="layout-pt-md layout-pb-md">
         <div class="container">
           <div class="row y-gap-30 items-center">
             <div class="col-xl-5 offset-xl-1 col-lg-6">
@@ -424,6 +426,89 @@ Each project is designed to mirror real company workflows, ensuring you develop 
           </div>
         </div>
       </section>
+      </div>
+      
+      <!-- Mobile Version -->
+       <div id="mobileview">
+      <section class="layout-pt-md layout-pb-md">
+        <div class="container">
+          <div class="row y-gap-30 items-center">
+            <div class="col-xl-5 offset-xl-1 col-lg-6">
+              <img class="w-1/1" src="/img/general/enroll.jpg" alt="image">
+            </div>
+
+            <div class="col-xl-4 offset-xl-1 col-lg-6">
+              <h3 class="text-24 lh-1">Enroll for courses and skill programs</h3>
+              <p class="mt-20">Enroll in a diverse range of industry-recognized courses and hands-on skill development programs crafted to help you master emerging technologies, gain practical experience, and accelerate your professional growth in today’s competitive landscape. Each course is designed by experts to ensure you not only learn but also apply your knowledge through real-world challenges and projects</p>
+              <div class="d-inline-block mt-20">
+                <a href="instructors-become.html" class="button -md -outline-purple-1 text-purple-1">Apply Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="layout-pt-md layout-pb-md">
+        <div class="container">
+          <div class="row y-gap-30 items-center">
+            
+            <div class="col-xl-5 offset-xl-1 col-lg-6">
+              <img class="w-1/1" src="/img/general/learn.jpg" alt="image">
+            </div>
+            <div class="col-xl-4 offset-xl-1 col-lg-6">
+              <h3 class="text-24 lh-1">Learn skills through tutorials and real-time projects</h3>
+              <p class="mt-20">Learn essential and advanced skills through engaging tutorials, hands-on exercises, and immersive real-time projects that mirror real industry challenges.
+Our interactive learning approach ensures you gain not just theoretical knowledge but also practical expertise that builds confidence and prepares you for real-world success.</p>
+              <div class="d-inline-block mt-20">
+                <a href="instructors-become.html" class="button -md -outline-purple-1 text-purple-1">Apply Now</a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="layout-pt-md layout-pb-md">
+        <div class="container">
+          <div class="row y-gap-30 items-center">
+            <div class="col-xl-5 offset-xl-1 col-lg-6">
+              <img class="w-1/1" src="/img/general/earn badge.jpg" alt="image">
+            </div>
+
+            <div class="col-xl-4 offset-xl-1 col-lg-6">
+              <h3 class="text-24 lh-1">Earn badges and certificates after completing courses</h3>
+              <p class="mt-20">Earn prestigious badges and certificates upon successfully completing each course, showcasing your newly acquired skills and achievements to potential employers and clients.
+These verified credentials serve as a testament to your dedication, helping you stand out in a competitive job market and build a strong professional portfolio.</p>
+              <div class="d-inline-block mt-20">
+                <a href="instructors-become.html" class="button -md -outline-purple-1 text-purple-1">Apply Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="layout-pt-md layout-pb-md">
+        <div class="container">
+          <div class="row y-gap-30 items-center">
+             <div class="col-xl-5 offset-xl-1 col-lg-6">
+              <img class="w-1/1" src="/img/general/realproj.jpg" alt="image">
+            </div>
+
+            <div class="col-xl-4 offset-xl-1 col-lg-6">
+              <h3 class="text-24 lh-1">Work on real-time business projects</h3>
+              <p class="mt-20">Work on authentic real-time business projects that provide valuable industry exposure and help you apply your learning in practical scenarios.
+Collaborate with professionals, solve real challenges, and gain the kind of hands-on experience that strengthens your portfolio and boosts your career readiness.
+Each project is designed to mirror real company workflows, ensuring you develop the skills, confidence, and problem-solving mindset needed to excel in your future career.</p>
+              <div class="d-inline-block mt-20">
+                <a href="instructors-become.html" class="button -md -outline-purple-1 text-purple-1">Apply Now</a>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </section>
+       </div>
+       <!-- Mobile Version -->
       
       
 
@@ -601,7 +686,7 @@ Each project is designed to mirror real company workflows, ensuring you develop 
         <div class="container">
           <div class="row y-gap-30 justify-between items-center">
             <div class="col-xl-5 col-lg-6 col-md-9 lg:order-2">
-              <h3 class="text-40 lh-1"> <span class="text-purple-1">Conclusion: </span> Land your dream job in data science</h3>
+              <h3 class="text-40 lh-1"> <span class="text-purple-1">Conclusion: </span> Land your dream job</h3>
               <p class="mt-25">CareerHub empowers learners to gain skills, earn credentials, and take real-world projects to launch their career</p>
               <div class="d-inline-block mt-30">
                 <a href="#" class="button -md -outline-purple-1 text-purple-1">Learn More</a>
@@ -659,6 +744,25 @@ Each project is designed to mirror real company workflows, ensuring you develop 
   <script src="/unpkg.com/leaflet%401.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
   <script src="/js/vendors.js"></script>
   <script src="/js/main.js"></script>
+  <script>
+  function toggleView() {
+    const desktopView = document.getElementById("desktopview");
+    const mobileView = document.getElementById("mobileview");
+
+    if (window.innerWidth < 768) {
+      desktopView.style.display = "none";
+      mobileView.style.display = "block";
+    } else {
+      desktopView.style.display = "block";
+      mobileView.style.display = "none";
+    }
+  }
+
+  // Run once on load
+  window.addEventListener("load", toggleView);
+  // Run on resize
+  window.addEventListener("resize", toggleView);
+</script>
   <script src="/js/isuserloggedin.js"></script>
   <script src="/js/logout.js"></script>
 </body>
