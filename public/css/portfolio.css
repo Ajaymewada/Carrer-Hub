@@ -1,0 +1,155 @@
+.careerhub-portfolio {
+  font-family: "Poppins", sans-serif;
+  /* padding: 80px 20px; */
+  margin-top: 80px;
+  background-color: #fff;
+  color: #2b2b2b;
+}
+
+.portfolio-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.portfolio-title {
+  text-align: center;
+  font-size: 2.3rem;
+  color: #5b21b6;
+  font-weight: 700;
+}
+
+.portfolio-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 10px auto 60px;
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Feature Sections */
+.feature-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 250px;
+  margin-bottom: 100px;
+}
+
+.feature-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.feature-text {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.feature-text h2 {
+  /* color: #7c3aed; */
+  /* font-size: 1.6rem; */
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    display: inline-block;
+    background-image: linear-gradient(to right, #9926f0, #d122e3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.feature-text i {
+  color: #7c3aed;
+  /* margin-right: 8px; */
+}
+
+.feature-text p {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn-learn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 2px solid #7c3aed;
+  padding: 10px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #2b2b2b;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-learn:hover {
+  background-color: #7c3aed;
+  color: #fff;
+}
+
+.btn-learn span {
+  color: #7c3aed;
+  transition: transform 0.3s ease;
+}
+
+.btn-learn:hover span {
+  transform: translateX(4px);
+  color: #fff;
+}
+
+/* Image */
+.feature-image {
+  flex: 1;
+  text-align: center;
+}
+
+.feature-image img {
+  max-width: 90%;
+  border-radius: 20px;
+  transition: transform 0.4s ease;
+}
+
+.feature-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Conclusion */
+.portfolio-conclusion {
+  text-align: center;
+  background: linear-gradient(135deg, #ede9fe, #f5f3ff);
+  padding: 50px;
+  border-radius: 20px;
+  margin-top: 60px;
+}
+
+.portfolio-conclusion h2 {
+  color: #5b21b6;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.portfolio-conclusion p {
+  color: #444;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .feature-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature-section.reverse {
+    flex-direction: column;
+  }
+
+  .feature-image img {
+    max-width: 100%;
+  }
+}

@@ -26,7 +26,7 @@ async function login(event) {
     //   console.log("User:", data.user);
       // redirect or store user info
       localStorage.setItem("user", JSON.stringify(data.user));
-      window.location.href = "/home";
+      window.location.href = "/portfolio";
     } else {
       message.textContent = data.message || "Login failed!";
       message.style.color = "red";
