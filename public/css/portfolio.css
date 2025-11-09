@@ -153,3 +153,257 @@
     max-width: 100%;
   }
 }
+
+/* POPUP CSS */
+/* Modal Overlay */
+.custom-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Modal Box */
+.custom-modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  width: 450px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  animation: popIn 0.3s ease-out;
+}
+
+/* Form Fields */
+.custom-form .form-group {
+  margin-bottom: 16px;
+}
+.custom-form label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.custom-form input {
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+.custom-form input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+/* Buttons inside modal */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Animation */
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* --- Global Card Style --- */
+.education-section,
+.skills-section,
+.cert-section,
+.project-section,
+.exp-section {
+  background: #fff;
+  border: none;
+  border-radius: 15px;       /* round corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);  /* soft shadow */
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+/* subtle hover lift */
+.education-section:hover,
+.skills-section:hover,
+.cert-section:hover,
+.project-section:hover,
+.exp-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* --- Modal Box --- */
+.custom-modal {
+  background: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  width: 400px;
+  max-width: 90%;
+  animation: popupFade 0.25s ease-in-out;
+}
+
+@keyframes popupFade {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Input fields --- */
+.custom-form input {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  background: #f6f6f8;
+  font-size: 15px;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.custom-form input:focus {
+  outline: none;
+  background: #f0edff;
+  box-shadow: 0 0 0 2px rgba(114, 61, 255, 0.3);
+}
+
+/* --- Buttons --- */
+.button {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* --- Skill Tag Styling --- */
+.skill-tag {
+  background: #f0edff;
+  color: #5b3ec0;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+  margin: 5px;
+}
+
+/* --- Modal overlay --- */
+.custom-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+/* --- Card Style for Info Sections --- */
+.info-card {
+  background: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for subtle depth */
+.info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Match the input & textarea style */
+.info-card input,
+.info-card textarea {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background: #f6f6f8;
+  padding: 10px 15px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.info-card input:focus,
+.info-card textarea:focus {
+  background: #f0edff;
+  box-shadow: 0 0 0 2px rgba(114, 61, 255, 0.3);
+}
+
+/* Keep Save button consistent */
+.info-card .button {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.info-card .button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+/* --- Upload Box --- */
+.upload-box {
+  background: #f6f6f8;
+  border: 2px dashed #ccc;
+  border-radius: 15px;
+  text-align: center;
+  padding: 40px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-box:hover {
+  background: #f0edff;
+  border-color: #7b61ff;
+  box-shadow: 0 0 10px rgba(123, 97, 255, 0.15);
+}
+
+.upload-icon {
+  font-size: 40px;
+  color: #7b61ff;
+  margin-bottom: 10px;
+}
+
+.upload-text {
+  color: #555;
+  font-size: 15px;
+}
+
+.upload-text .browse {
+  color: #7b61ff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.uploaded-file-name {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Keep same hover animation for Save buttons */
+.info-card .button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}

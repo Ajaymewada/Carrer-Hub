@@ -18,6 +18,17 @@
 .ratio-2\:1::before {
   padding-bottom: 50%;
 }
+.text-light1{
+  color: white !important;
+}
+.float-right{
+  float: right !important;
+}
+.section-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .ratio-2\:3::before {
   padding-bottom: 150%;
@@ -9169,7 +9180,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-purple-1 {
-  background-color: var(--color-purple-1);
+  background-image: linear-gradient(to right, #9926f0, #d122e3) !important;
 }
 
 .bg-purple-2 {

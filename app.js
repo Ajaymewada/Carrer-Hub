@@ -40,7 +40,7 @@ app.get("/signup", (req, res) => {
 });
 
 app.get("/portfolio", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "portfolio1.html"));
+  res.sendFile(path.join(__dirname, "views", "portfoliofinal.html"));
 });
 
 // Connect to MongoDB Atlas
