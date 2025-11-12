@@ -6,9 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectList = document.getElementById('projectList');
 
   // Show modal
-  addProjectBtn.addEventListener('click', () => {
-    projectModal.style.display = 'flex';
-  });
+  document.getElementById("addProjectBtn")?.addEventListener("click", () => openProjectModal());
 
   // Close modal
   closeProjectModal.addEventListener('click', () => {
@@ -18,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add Project
   projectForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-
+    const projectId = document.getElementById("projectId").value;
     const project = {
       title: document.getElementById('projectTitle').value.trim(),
       description: document.getElementById('projectDesc').value.trim(),
@@ -42,8 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
-      const res = await fetch('/api/projects/addproject', {
-        method: 'POST',
+      const method = projectId ? "PUT" : "POST"; 
+      const endpoint = projectId ? `/api/projects/updateProject/${projectId}` : `/api/projects/addproject`; 
+      const res = await fetch(endpoint, {
+        method: method,
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(project),
       });
@@ -51,21 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await res.json();
 
       if (data.success) {
-        alert('✅ Project added successfully!');
+        // alert('✅ Project added successfully!');
         projectForm.reset();
         projectModal.style.display = 'none';
-
-        // Append new project to UI
-        const p = data.project;
-        projectList.innerHTML += `
-          <div class="education-item border-bottom-light pb-20 mb-20">
-            <h6 class="text-17 fw-600 text-dark-1">${p.title}</h6>
-            <p class="text-15 text-dark-2">${p.description || ''}</p>
-            <p class="text-15 text-dark-2"><b>Duration:</b> ${p.duration || ''}</p>
-            <p class="text-15 text-dark-2"><b>Role:</b> ${p.role || ''}</p>
-            <p class="text-15 text-dark-2"><b>Technologies:</b> ${p.technologies || ''}</p>
-            <p class="text-15 text-dark-2"><b>Team Size:</b> ${p.teamSize || ''}</p>
-          </div>`;
+        fetchUserProjects();
       } else {
         alert('❌ ' + data.message);
       }
@@ -93,14 +82,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
       data.projects.forEach((p) => {
         projectList.innerHTML += `
-          <div class="education-item border-bottom-light pb-20 mb-20">
-            <h6 class="text-17 fw-600 text-dark-1">${p.title}</h6>
-            <p class="text-15 text-dark-2">${p.description || ''}</p>
-            <p class="text-15 text-dark-2"><b>Duration:</b> ${p.duration || ''}</p>
-            <p class="text-15 text-dark-2"><b>Role:</b> ${p.role || ''}</p>
-            <p class="text-15 text-dark-2"><b>Technologies:</b> ${p.technologies || ''}</p>
-            <p class="text-15 text-dark-2"><b>Team Size:</b> ${p.teamSize || ''}</p>
-          </div>`;
+            <div class="education-item border-bottom-light pb-20 mb-20">
+                <div class="d-flex justify-between align-center">
+                <h6 class="text-17 fw-600 text-dark-1">${p.title}</h6>
+                <button class="button -xs bg-purple-1 text-light1" style="padding:10px;" onclick="editProject('${p._id}')">
+                    <i class="fa fa-pencil" style="margin-right:7px;"></i> Edit
+                </button>
+                </div>
+                <p class="text-15 text-dark-2">${p.description || ""}</p>
+                <p class="text-15 text-dark-2"><b>Duration:</b> ${p.duration || ""}</p>
+                <p class="text-15 text-dark-2"><b>Role:</b> ${p.role || ""}</p>
+                <p class="text-15 text-dark-2"><b>Technologies:</b> ${p.technologies || ""}</p>
+                <p class="text-15 text-dark-2"><b>Team Size:</b> ${p.teamSize || ""}</p>
+            </div>`;
       });
     } else {
       console.log('No projects found:', data.message);
@@ -108,5 +102,30 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch (error) {
     console.error('Error fetching user projects:', error);
   }
-}
+  }
 });
+
+async function editProject(id) {
+    const res = await fetch(`/api/projects/getProjectById/${id}`);
+    const data = await res.json();
+    if (data.success) openProjectModal(data.project);
+}
+
+function openProjectModal(project = null) {
+  projectModal.style.display = "flex";
+  modalTitle.textContent = project ? "Edit Project" : "Add Project";
+
+  if (project) {
+    document.getElementById("projectId").value = project._id;
+    document.getElementById("projectTitle").value = project.title || "";
+    document.getElementById("projectDesc").value = project.description || "";
+    document.getElementById("projectDuration").value = project.duration || "";
+    document.getElementById("projectRole").value = project.role || "";
+    document.getElementById("projectTech").value = project.technologies || "";
+    document.getElementById("projectTeam").value = project.teamSize || "";
+    document.getElementById("projectURL").value = project.projectURL || "";
+  } else {
+    projectForm.reset();
+    document.getElementById("projectId").value = "";
+  }
+}

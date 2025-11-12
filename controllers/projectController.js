@@ -50,3 +50,26 @@ exports.getProjectsByUser = async (req, res) => {
   }
 };
 
+// Get single project by ID
+exports.getProjectById = async (req, res) => {
+  try {
+    const project = await Project.findById(req.params.id);
+    if (!project) return res.status(404).json({ success: false, message: "Project not found" });
+    res.status(200).json({ success: true, project });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+// Update project
+exports.updateProject = async (req, res) => {
+  try {
+    const updatedProject = await Project.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!updatedProject) return res.status(404).json({ success: false, message: "Project not found" });
+    res.status(200).json({ success: true, message: "Project updated successfully", project: updatedProject });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+

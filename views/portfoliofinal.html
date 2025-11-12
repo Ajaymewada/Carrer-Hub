@@ -378,9 +378,9 @@
                         <button class="button -sm bg-purple-1 text-light1" id="addProjectBtn" style="margin-right: 8px;">
                             <i class="fa fa-plus" style="margin-right: 8px;"></i> Add
                         </button>
-                        <button class="button -sm bg-purple-1 text-light1">
+                        <!-- <button class="button -sm bg-purple-1 text-light1">
                             <i class="fa fa-pencil" style="margin-right: 8px;"></i> Edit
-                        </button>
+                        </button> -->
                         </div>
                     </div>
 
@@ -396,9 +396,10 @@
                     <!-- Projects Popup -->
                     <div class="custom-modal-overlay" id="projectModal">
                         <div class="custom-modal">
-                            <h5 class="text-18 fw-600 text-purple-1 mb-20">Add Project</h5>
+                            <h5 class="text-18 fw-600 text-purple-1 mb-20" id="modalTitle">Add Project</h5>
                             <form id="projectForm" class="custom-form">
                                 <div class="row justify-center items-center">
+                                    <input type="hidden" id="projectId" />
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label>Project Title</label>
