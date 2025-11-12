@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <i class="fa fa-pencil" style="margin-right:7px;"></i> Edit
                 </button>
                 </div>
-                <p class="text-15 text-dark-2">${p.description || ""}</p>
+                <p class="text-15 text-dark-2" style="width:70%;">${p.description || ""}</p>
                 <p class="text-15 text-dark-2"><b>Duration:</b> ${p.duration || ""}</p>
                 <p class="text-15 text-dark-2"><b>Role:</b> ${p.role || ""}</p>
                 <p class="text-15 text-dark-2"><b>Technologies:</b> ${p.technologies || ""}</p>
