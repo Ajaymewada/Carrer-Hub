@@ -252,7 +252,7 @@
   border-radius: 15px;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
   padding: 30px;
-  width: 400px;
+  width: 800px;
   max-width: 90%;
   animation: popupFade 0.25s ease-in-out;
 }
@@ -313,6 +313,7 @@
   justify-content: center;
   align-items: center;
   z-index: 999;
+  /* width: 500px; */
 }
 /* --- Card Style for Info Sections --- */
 .info-card {
@@ -342,9 +343,23 @@
   outline: none;
   transition: all 0.2s ease;
 }
+.form-group textarea{
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background: #f6f6f8;
+  padding: 10px 15px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s ease;
+}
 
 .info-card input:focus,
 .info-card textarea:focus {
+  background: #f0edff;
+  box-shadow: 0 0 0 2px rgba(114, 61, 255, 0.3);
+}
+.form-group textarea:focus {
   background: #f0edff;
   box-shadow: 0 0 0 2px rgba(114, 61, 255, 0.3);
 }

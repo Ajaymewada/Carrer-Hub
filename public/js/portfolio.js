@@ -71,20 +71,25 @@ document.getElementById("certForm").onsubmit = e => {
 };
 
 // ===== Projects =====
-document.getElementById("addProjectBtn").onclick = () => openModal("projectModal");
-document.getElementById("closeProjectModal").onclick = () => closeModal("projectModal");
-document.getElementById("projectForm").onsubmit = e => {
-  e.preventDefault();
-  const t = projectTitle.value, d = projectDesc.value, du = projectDuration.value;
-  const html = `
-    <div class="project-item border-bottom-light pb-20 mb-20">
-      <h6 class="text-17 fw-600 text-dark-1">${t}</h6>
-      <p class="text-15 text-dark-2">${d}</p>
-      <p class="text-15 text-dark-2">Duration: ${du}</p>
-    </div>`;
-  document.querySelector(".project-list").insertAdjacentHTML("beforeend", html);
-  e.target.reset(); closeModal("projectModal");
-};
+// document.getElementById("addProjectBtn").onclick = () => openModal("projectModal");
+// document.getElementById("closeProjectModal").onclick = () => closeModal("projectModal");
+// document.getElementById("projectForm").onsubmit = async (e) => {
+//   e.preventDefault();
+//   const t = projectTitle.value, d = projectDesc.value, du = projectDuration.value;
+//   const res = await fetch("/api/users/loginuser", {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify({ email, password }),
+//   });
+//   const html = `
+//     <div class="project-item border-bottom-light pb-20 mb-20">
+//       <h6 class="text-17 fw-600 text-dark-1">${t}</h6>
+//       <p class="text-15 text-dark-2">${d}</p>
+//       <p class="text-15 text-dark-2">Duration: ${du}</p>
+//     </div>`;
+//   document.querySelector(".project-list").insertAdjacentHTML("beforeend", html);
+//   e.target.reset(); closeModal("projectModal");
+// };
 
 // ===== Experience =====
 document.getElementById("addExpBtn").onclick = () => openModal("expModal");

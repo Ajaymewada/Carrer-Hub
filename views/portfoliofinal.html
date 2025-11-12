@@ -384,38 +384,72 @@
                         </div>
                     </div>
 
-                    <div class="project-list mt-30">
-                        <div class="project-item border-bottom-light pb-20 mb-20">
+                    <div class="project-list mt-30" id="projectList">
+                        <!-- <div class="project-item border-bottom-light pb-20 mb-20">
                         <h6 class="text-17 fw-600 text-dark-1">LMS Web Application</h6>
                         <p class="text-15 text-dark-2">A learning management system built using MERN stack.</p>
                         <p class="text-15 text-dark-2">Duration: 2023 – 2024</p>
-                        </div>
+                        </div> -->
                     </div>
                     </div>
 
                     <!-- Projects Popup -->
                     <div class="custom-modal-overlay" id="projectModal">
-                    <div class="custom-modal">
-                        <h5 class="text-18 fw-600 text-purple-1 mb-20">Add Project</h5>
-                        <form id="projectForm" class="custom-form">
-                        <div class="form-group">
-                            <label>Project Title</label>
-                            <input type="text" placeholder="Enter project name" id="projectTitle" required>
+                        <div class="custom-modal">
+                            <h5 class="text-18 fw-600 text-purple-1 mb-20">Add Project</h5>
+                            <form id="projectForm" class="custom-form">
+                                <div class="row justify-center items-center">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Project Title</label>
+                                            <input type="text" placeholder="Enter project title" id="projectTitle" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Description</label>
+                                            <textarea rows="3" placeholder="Short description about the project" id="projectDesc"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Duration</label>
+                                            <input type="text" placeholder="e.g. Jan 2023 – May 2024" id="projectDuration">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Role</label>
+                                            <input type="text" placeholder="Your role in project" id="projectRole">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Technologies Used</label>
+                                            <input type="text" placeholder="e.g. React, Node.js, MongoDB" id="projectTech">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Team Size</label>
+                                            <input type="number" placeholder="e.g. 4" id="projectTeam">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Project URL</label>
+                                            <input type="text" placeholder="https://github.com/yourproject" id="projectURL">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                <button type="button" class="button -sm bg-dark-1 text-light1" id="closeProjectModal">Cancel</button>
+                                <button type="submit" class="button -sm bg-purple-1 text-light1">Save</button>
+                            </div>
+
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <label>Description</label>
-                            <input type="text" placeholder="Short description" id="projectDesc">
-                        </div>
-                        <div class="form-group">
-                            <label>Duration</label>
-                            <input type="text" placeholder="e.g. 2023 – 2024" id="projectDuration">
-                        </div>
-                        <div class="form-actions">
-                            <button type="button" class="button -sm bg-dark-1 text-light1" id="closeProjectModal">Cancel</button>
-                            <button type="submit" class="button -sm bg-purple-1 text-light1">Save</button>
-                        </div>
-                        </form>
-                    </div>
                     </div>
 
 
@@ -555,5 +589,7 @@
     <script src="/js/isuserloggedin.js"></script>
     <script src="/js/logout.js"></script>
     <script src="/js/portfolio.js"></script>
+    <script src="/js/projects.js"></script>
+    
   </body>
 </html>

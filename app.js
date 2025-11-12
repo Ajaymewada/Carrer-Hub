@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 var cors = require('cors')
 
 const userRoutes = require("./routes/userRoutes");
+const projectRoutes = require("./routes/projectRoutes");
 
 const app = express();
 app.use(cors())
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use("/api/users", userRoutes);
+app.use("/api/projects", projectRoutes);
 
 // Serve index.html on root route
 app.get("/", (req, res) => {
