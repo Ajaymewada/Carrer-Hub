@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+
+  <!-- <link rel="stylesheet" href="/cdn.jsdelivr.net/npm/choices.js/public/assets/styles/base.min.css" /> -->
+  <link rel="stylesheet" href="/cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="/cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/unpkg.com/leaflet%401.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/vendors.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <title>Career Hub</title>
+</head>
+
+<body class="preloader-visible" data-barba="wrapper">
+  <!-- preloader start -->
+  <div class="preloader js-preloader">
+    <div class="preloader__bg"></div>
+  </div>
+  <!-- preloader end -->
+
+
+  <main class="main-content  ">
+
+    <header data-anim="fade" data-add-bg="" class="header -type-4 -shadow bg-white js-header">
+
+
+      <div class="header__container border-bottom-light py-10">
+        <div class="row justify-between items-center">
+
+          <div class="col-auto">
+            <div class="header-left d-flex items-center">
+
+              <div class="header__logo pr-30 xl:pr-20 md:pr-0">
+                <a data-barba href="#">
+                  <img width="225px;" src="/img/general/main-logo2.png" alt="logo">
+                </a>
+              </div>
+
+
+              <div class="header-menu js-mobile-menu-toggle pl-30 xl:pl-20">
+                <div class="header-menu__content">
+                  <div class="mobile-bg js-mobile-bg"></div>
+
+                  <div class="d-none xl:d-flex items-center px-20 py-20 border-bottom-light">
+                    <a href="#" class="text-dark-1">Log Out</a>
+                  </div>
+
+                  <div class="menu js-navList">
+                    <ul class="menu__nav text-dark-1 -is-active">
+                      <li>
+                        <a href="/home" style="cursor: pointer;">Home</a>
+                      </li>
+
+                      <li class="-has-mega-menu">
+                        <a href="/portfolio" style="cursor: pointer;">Portfolio</a>
+                      </li>
+
+                      <li class="-has-mega-menu">
+                        <a href="#" style="cursor: pointer;">Courses</a>
+                      </li>
+
+                      <li class="-has-mega-menu">
+                        <a href="#" style="cursor: pointer;">My Learnings</a>
+                      </li>
+
+                      <li class="-has-mega-menu">
+                          <a href="/businessprojects" style="cursor: pointer">Business Projects</a>
+                      </li>
+
+                      <li class="">
+                        <a href="#">Free Lance Jobs</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="header-menu-close" data-el-toggle=".js-mobile-menu-toggle">
+                  <div class="size-40 d-flex items-center justify-center rounded-full bg-white">
+                    <div class="icon-close text-dark-1 text-16"></div>
+                  </div>
+                </div>
+
+                <div class="header-menu-bg"></div>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="col-auto">
+            <div class="header-right d-flex items-center">
+              <div class="header-right__icons text-white d-flex items-center">
+                <div class="header-search-field">
+                  <form action="#">
+                    <div class="header-search-field__group">
+                      <input type="text" placeholder="What do you want to learn?">
+                      <button type="submit">
+                        <i class="icon icon-search"></i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
+
+                <div class="relative -after-border pl-20 sm:pl-15">
+                  <div class="toggle-element js-cart-toggle">
+                    <div class="header-cart bg-white -dark-bg-dark-1 rounded-8">
+                      <div class="px-30 pt-30 pb-10">
+
+                        <div class="row justify-between x-gap-40 pb-20">
+                          <div class="col">
+                            <div class="row x-gap-10 y-gap-10">
+                              <div class="col-auto">
+                                <img src="/img/menus/cart/1.png" alt="image">
+                              </div>
+
+                              <div class="col">
+                                <div class="text-dark-1 lh-15">The Ultimate Drawing Course Beginner to Advanced...</div>
+
+                                <div class="d-flex items-center mt-10">
+                                  <div class="lh-12 fw-500 line-through text-light-1 mr-10">$179</div>
+                                  <div class="text-18 lh-12 fw-500 text-dark-1">Free</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-auto">
+                            <button><img src="/img/menus/close.svg" alt="icon"></button>
+                          </div>
+                        </div>
+
+                        <div class="row justify-between x-gap-40 pb-20">
+                          <div class="col">
+                            <div class="row x-gap-10 y-gap-10">
+                              <div class="col-auto">
+                                <img src="/img/menus/cart/2.png" alt="image">
+                              </div>
+
+                              <div class="col">
+                                <div class="text-dark-1 lh-15">User Experience Design Essentials - Adobe XD UI UX...</div>
+
+                                <div class="d-flex items-center mt-10">
+                                  <div class="lh-12 fw-500 line-through text-light-1 mr-10">$179</div>
+                                  <div class="text-18 lh-12 fw-500 text-dark-1">$79</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-auto">
+                            <button><img src="/img/menus/close.svg" alt="icon"></button>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="px-30 pt-20 pb-30 border-top-light">
+                        <div class="d-flex justify-between">
+                          <div class="text-18 lh-12 text-dark-1 fw-500">Total:</div>
+                          <div class="text-18 lh-12 text-dark-1 fw-500">$659</div>
+                        </div>
+
+                        <div class="row x-gap-20 y-gap-10 pt-30">
+                          <div class="col-sm-6">
+                            <button class="button py-20 -dark-1 text-white -dark-button-white col-12">View Cart</button>
+                          </div>
+                          <div class="col-sm-6">
+                            <button class="button py-20 -purple-1 text-white col-12">Checkout</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="d-none xl:d-block pl-20 sm:pl-15">
+                  <button class="text-dark-1 items-center" data-el-toggle=".js-mobile-menu-toggle">
+                    <i class="text-11 icon icon-mobile-menu"></i>
+                  </button>
+                </div>
+
+              </div>
+
+              <div class="header-right__buttons d-flex items-center ml-30 xl:ml-20 lg:d-none">
+                <!-- <a href="#" class="button -underline text-purple-1" id="logout-btn">Log Out</a> -->
+                <button type="button" class="button -underline text-purple-1" id="logout-btn">Log Out</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+
+    <div class="content-wrapper  js-content-wrapper">
+         <section class="layout-pt-md layout-pb-lg">
+        <div data-anim-wrap class="container">
+          <div class="row">
+              <section class="layout-pt-lg layout-pb-lg bg-light-6">
+        <div data-anim-wrap="" class="container animated">
+          <div data-anim-child="slide-left delay-1" class="row y-gap-20 justify-between items-center is-in-view">
+            <div class="col-lg-6">
+
+              <div class="sectionTitle ">
+
+                <h2 class="sectionTitle__title ">Business Projects</h2>
+
+                <p class="sectionTitle__text ">Explore real world analytics and business projects</p>
+
+              </div>
+
+            </div>
+        </div>
+
+          <div class="row y-gap-30 pt-60">
+
+            <div class="col-lg-3 col-md-6">
+              <div data-anim-child="slide-left delay-2" class="blogCard -type-1 rounded-8 border-light shadow-1 overflow-hidden is-in-view">
+                <div class="blogCard__image ratio ratio-3:2">
+                  <img class="img-ratio" src="https://365datascience.com/resources/blog/76d23eoyf32-market-basket-analysis-frequent-items.jpeg" alt="image">
+                </div>
+                <div class="px-30 py-30 bg-white">
+                  <h4 class="text-17 lh-15 fw-500">Market Basket analysis analyze transaction data to find product association</h4>
+                  <button class="button -xs bg-purple-1 text-light1" style="padding:10px; margin-top: 10px; margin-bottom: 10px;">
+                  <i class="fa fa-eye" style="padding-right: 5px;"></i> View Project
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div data-anim-child="slide-left delay-2" class="blogCard -type-1 rounded-8 border-light shadow-1 overflow-hidden is-in-view">
+                <div class="blogCard__image ratio ratio-3:2">
+                  <img class="img-ratio" src="https://www.superheuristics.com/wp-content/uploads/2018/09/Sales-Forecasting.png" alt="image">
+                </div>
+                <div class="px-30 py-30 bg-white">
+                  <h4 class="text-17 lh-15 fw-500">Sales Forecasting Predict future sales using historical data</h4>
+                  <button class="button -xs bg-purple-1 text-light1" style="padding:10px; margin-top: 10px; margin-bottom: 10px;">
+                  <i class="fa fa-eye" style="padding-right: 5px;"></i> View Project
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div data-anim-child="slide-left delay-2" class="blogCard -type-1 rounded-8 border-light shadow-1 overflow-hidden is-in-view">
+                <div class="blogCard__image ratio ratio-3:2">
+                  <img class="img-ratio" src="https://www.omniconvert.com/wp-content/uploads/2024/04/customer-behaviour-segmentation.webp" alt="image">
+                </div>
+                <div class="px-30 py-30 bg-white">
+                  <h4 class="text-17 lh-15 fw-500">Customer Segmentation Identify distinct customer groups</h4>
+                  <button class="button -xs bg-purple-1 text-light1" style="padding:10px; margin-top: 10px; margin-bottom: 10px;">
+                  <i class="fa fa-eye" style="padding-right: 5px;"></i> View Project
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div data-anim-child="slide-left delay-2" class="blogCard -type-1 rounded-8 border-light shadow-1 overflow-hidden is-in-view">
+                <div class="blogCard__image ratio ratio-3:2">
+                  <img class="img-ratio" src="https://www.hashstudioz.com/blog/wp-content/uploads/2025/02/Churn-Prediction-in-Retail-How-Data-Analytics-Improves-Customer-Retention-1.png" alt="image">
+                </div>
+                <div class="px-30 py-30 bg-white" style="min-height: 191px;">
+                  <h4 class="text-17 lh-15 fw-500" style="min-height: 76px;">Churn Prediction Detect customers likely to leave</h4>
+                  <button class="button -xs bg-purple-1 text-light1" style="padding:10px; margin-top: 10px; margin-bottom: 10px;">
+                  <i class="fa fa-eye" style="padding-right: 5px;"></i> View Project
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+          </div>
+        </div>
+      </section>
+
+      
+
+      <footer class="footer -type-1 bg-purple-1">
+        <div class="container">
+          <div class="py-30">
+            <div class="row justify-between items-center y-gap-20">
+              <div class="col-auto">
+                <div class="d-flex items-center h-100 text-white">
+                  © 2025 Career Hub. All Right Reserved.
+                </div>
+              </div>
+
+              <div class="col-auto">
+                <div class="d-flex x-gap-20 y-gap-20 items-center flex-wrap">
+                  <div>
+                    <div class="d-flex x-gap-15 text-white">
+                      <a href="#">Help</a>
+                      <a href="#">Privacy Policy</a>
+                      <a href="#">Terms of Use</a>
+                    </div>
+                  </div>
+
+                  <div>
+                    <a href="#" class="button px-30 h-50 -dark-6 rounded-200 text-white">
+                      <i class="icon-worldwide text-20 mr-15"></i><span class="text-15">English</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+    </div>
+  </main>
+
+  <!-- JavaScript -->
+  <script src="/unpkg.com/leaflet%401.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+  <script src="/js/vendors.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/home.js"></script>
+  <script src="/js/logout.js"></script>
+</body>
+</html>

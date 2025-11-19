@@ -103,6 +103,10 @@
                           <a href="#" style="cursor: pointer">My Learnings</a>
                         </li>
 
+                        <li class="-has-mega-menu">
+                          <a href="/businessprojects" style="cursor: pointer">Business Projects</a>
+                        </li>
+
                         <li class="">
                           <a href="#">Free Lance Jobs</a>
                         </li>
@@ -171,385 +175,676 @@
       </header>
 
       <div class="content-wrapper js-content-wrapper">
-        <section class="container" style="margin-top: 100px;">
+        <section class="container" style="margin-top: 100px">
           <div class="">
             <div class="">
               <div class="row justify-center items-center">
                 <div class="col-xl-12 col-lg-12">
-                    
                   <div
                     class="px-50 py-50 md:px-25 md:py-25 bg-white shadow-1 rounded-16"
                   >
                     <h3 class="text-30 lh-13">Portfolio</h3>
                     <!-- ✍️ Basic Information -->
-                    <div class="info-card" style="margin-top: 50px;">
-                    <h5 class="text-20 lh-13 text-purple-1">Basic Information</h5>
-                    <form class="contact-form respondForm__form row y-gap-20 pt-30" onsubmit="login(event)">
+                    <div class="info-card" style="margin-top: 50px">
+                      <h5 class="text-20 lh-13 text-purple-1">
+                        Basic Information
+                      </h5>
+                      <form
+                        class="contact-form respondForm__form row y-gap-20 pt-30"
+                        onsubmit="login(event)"
+                      >
                         <div class="col-6">
-                        <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">First Name</label>
-                        <input type="text" placeholder="First Name" id="Fname"/>
+                          <label class="text-16 lh-1 fw-500 text-dark-1 mb-10"
+                            >First Name</label
+                          >
+                          <input
+                            type="text"
+                            placeholder="First Name"
+                            id="Fname"
+                          />
                         </div>
                         <div class="col-6">
-                        <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Last Name</label>
-                        <input type="text" placeholder="Last Name" id="Lname"/>
+                          <label class="text-16 lh-1 fw-500 text-dark-1 mb-10"
+                            >Last Name</label
+                          >
+                          <input
+                            type="text"
+                            placeholder="Last Name"
+                            id="Lname"
+                          />
                         </div>
                         <div class="col-6">
-                        <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Email</label>
-                        <input type="text" placeholder="Email" id="Email"/>
+                          <label class="text-16 lh-1 fw-500 text-dark-1 mb-10"
+                            >Email</label
+                          >
+                          <input type="text" placeholder="Email" id="Email" />
                         </div>
                         <div class="col-6">
-                        <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Location</label>
-                        <input type="text" placeholder="Location" id="Location"/>
+                          <label class="text-16 lh-1 fw-500 text-dark-1 mb-10"
+                            >Location</label
+                          >
+                          <input
+                            type="text"
+                            placeholder="Location"
+                            id="Location"
+                          />
                         </div>
                         <div class="col-12">
-                        <button type="submit" class="button -md fw-500 bg-purple-1 text-light1 float-right">Save</button>
+                          <button
+                            type="submit"
+                            class="button -md fw-500 bg-purple-1 text-light1 float-right"
+                          >
+                            Save
+                          </button>
                         </div>
-                    </form>
+                      </form>
                     </div>
 
                     <!-- ✍️ About Section -->
-                    <div class="info-card" style="margin-top: 50px;">
-                    <h5 class="text-20 lh-13 text-purple-1">About</h5>
-                    <form class="contact-form respondForm__form row y-gap-20 pt-30" onsubmit="saveAbout(event)">
+                    <div class="info-card" style="margin-top: 50px">
+                      <h5 class="text-20 lh-13 text-purple-1">About</h5>
+                      <form
+                        class="contact-form respondForm__form row y-gap-20 pt-30"
+                        onsubmit="saveAbout(event)"
+                      >
                         <div class="col-12">
-                        <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Describe You</label>
-                        <textarea rows="4" placeholder="Write something about yourself..." id="About"></textarea>
+                          <label class="text-16 lh-1 fw-500 text-dark-1 mb-10"
+                            >Describe You</label
+                          >
+                          <textarea
+                            rows="4"
+                            placeholder="Write something about yourself..."
+                            id="About"
+                          ></textarea>
                         </div>
                         <div class="col-12">
-                        <button type="submit" class="button -md fw-500 bg-purple-1 text-light1 float-right">Save</button>
+                          <button
+                            type="submit"
+                            class="button -md fw-500 bg-purple-1 text-light1 float-right"
+                          >
+                            Save
+                          </button>
                         </div>
-                    </form>
+                      </form>
                     </div>
 
                     <!-- ✍️ Education Section -->
-                     <div class="education-section" style="margin-top: 50px;">
-                        <div class="d-flex justify-between align-center">
-                            <h5 class="text-20 lh-13 text-purple-1">Education</h5>
-                            <div class="d-flex justify-between align-center">
-                            <button class="button -sm bg-purple-1 text-light1" id="addEducationBtn" style="margin-right: 8px;">
-                                <i class="fa fa-plus" style="margin-right: 8px;"></i> Add
-                            </button>
-                            <button class="button -sm bg-purple-1 text-light1">
-                                <i class="fa fa-pencil" style="margin-right: 8px;"></i> Edit
-                            </button>
-                            </div>
-                        </div>
+                    <div class="education-section" style="margin-top: 50px">
+                      <div class="d-flex justify-between align-center">
+                        <h5 class="text-20 lh-13 text-purple-1">Education</h5>
+                        <button
+                          class="button -sm bg-purple-1 text-light1"
+                          id="addEducationBtn"
+                        >
+                          <i class="fa fa-plus" style="margin-right: 8px"></i>
+                          Add
+                        </button>
+                      </div>
 
-                        <div class="education-list mt-30">
-                            <div class="education-item border-bottom-light pb-20 mb-20">
-                            <h6 class="text-17 fw-600 text-dark-1">Sri Indu College Of Engineering & Technology</h6>
-                            <p class="text-15 text-dark-2">Bachelor of Technology, ECE</p>
-                            <p class="text-15 text-dark-2">2016 – 2019</p>
-                            <p class="text-15 text-dark-2">Grade: 75</p>
-                            </div>
-                        </div>
+                      <div
+                        id="educationList"
+                        class="education-list mt-30"
+                      ></div>
                     </div>
 
                     <!-- Education Popup -->
                     <div class="custom-modal-overlay" id="educationModal">
-                    <div class="custom-modal">
-                        <h5 class="text-18 fw-600 text-purple-1 mb-20">Add Education</h5>
+                      <div class="custom-modal">
+                        <h5
+                          class="text-18 fw-600 text-purple-1 mb-20"
+                          id="eduModalTitle"
+                        >
+                          Add Education
+                        </h5>
+
                         <form id="educationForm" class="custom-form">
-                        <div class="form-group">
+                          <input type="hidden" id="educationId" />
+
+                          <div class="form-group">
                             <label>Institute Name</label>
-                            <input type="text" placeholder="Enter institute name" id="instituteName" required>
-                        </div>
-                        <div class="form-group">
+                            <input
+                              type="text"
+                              id="instituteName"
+                              placeholder="Enter institute name"
+                              required
+                            />
+                          </div>
+
+                          <div class="form-group">
                             <label>Degree</label>
-                            <input type="text" placeholder="Enter degree name" id="degreeName" required>
-                        </div>
-                        <div class="form-group">
+                            <input
+                              type="text"
+                              id="degreeName"
+                              placeholder="Enter degree"
+                            />
+                          </div>
+
+                          <div class="form-group">
                             <label>Field of Study</label>
-                            <input type="text" placeholder="e.g. Computer Science" id="fieldOfStudy">
-                        </div>
-                        <div class="form-group">
+                            <input
+                              type="text"
+                              id="fieldOfStudy"
+                              placeholder="e.g. Computer Science"
+                            />
+                          </div>
+
+                          <div class="form-group">
                             <label>Start Year</label>
-                            <input type="text" placeholder="e.g. 2016" id="startYear">
-                        </div>
-                        <div class="form-group">
+                            <input
+                              type="text"
+                              id="startYear"
+                              placeholder="e.g. 2016"
+                            />
+                          </div>
+
+                          <div class="form-group">
                             <label>End Year</label>
-                            <input type="text" placeholder="e.g. 2019" id="endYear">
-                        </div>
-                        <div class="form-group">
+                            <input
+                              type="text"
+                              id="endYear"
+                              placeholder="e.g. 2019"
+                            />
+                          </div>
+
+                          <div class="form-group">
                             <label>Grade</label>
-                            <input type="text" placeholder="e.g. 75" id="grade">
-                        </div>
-                        <div class="form-actions">
-                            <button type="button" class="button -sm bg-dark-1 text-light1" id="closeModalBtn">Cancel</button>
-                            <button type="submit" class="button -sm bg-purple-1 text-light1">Save</button>
-                        </div>
+                            <input
+                              type="text"
+                              id="grade"
+                              placeholder="e.g. 75"
+                            />
+                          </div>
+
+                          <div class="form-actions">
+                            <button
+                              type="button"
+                              class="button -sm bg-dark-1 text-light1"
+                              id="closeEduModal"
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              type="submit"
+                              class="button -sm bg-purple-1 text-light1"
+                            >
+                              Save
+                            </button>
+                          </div>
                         </form>
-                    </div>
+                      </div>
                     </div>
 
                     <!-- ✍️ Skills Section -->
-                    <div class="skills-section" style="margin-top: 50px;">
-                    <div class="d-flex justify-between align-center">
+                    <div class="skills-section" style="margin-top: 50px">
+                      <div class="d-flex justify-between align-center">
                         <h5 class="text-20 lh-13 text-purple-1">Skills</h5>
                         <div class="d-flex justify-between align-center">
-                        <button class="button -sm bg-purple-1 text-light1" id="addSkillBtn" style="margin-right: 8px;">
-                            <i class="fa fa-plus" style="margin-right: 8px;"></i> Add
-                        </button>
-                        <button class="button -sm bg-purple-1 text-light1">
-                            <i class="fa fa-pencil" style="margin-right: 8px;"></i> Edit
-                        </button>
+                          <button
+                            class="button -sm bg-purple-1 text-light1"
+                            id="addSkillBtn"
+                            style="margin-right: 8px"
+                          >
+                            <i class="fa fa-plus" style="margin-right: 8px"></i>
+                            Add
+                          </button>
+                          <button class="button -sm bg-purple-1 text-light1">
+                            <i
+                              class="fa fa-pencil"
+                              style="margin-right: 8px"
+                            ></i>
+                            Edit
+                          </button>
                         </div>
-                    </div>
+                      </div>
 
-                    <div class="skills-list mt-30 d-flex gap-10 flex-wrap">
+                      <div class="skills-list mt-30 d-flex gap-10 flex-wrap">
                         <span class="skill-tag">JavaScript</span>
                         <span class="skill-tag">Node.js</span>
                         <span class="skill-tag">MongoDB</span>
-                    </div>
+                      </div>
                     </div>
 
                     <!-- Skills Popup -->
                     <div class="custom-modal-overlay" id="skillsModal">
-                    <div class="custom-modal">
-                        <h5 class="text-18 fw-600 text-purple-1 mb-20">Add Skill</h5>
+                      <div class="custom-modal">
+                        <h5 class="text-18 fw-600 text-purple-1 mb-20">
+                          Add Skill
+                        </h5>
                         <form id="skillsForm" class="custom-form">
-                        <div class="form-group">
+                          <div class="form-group">
                             <label>Skill Name</label>
-                            <input type="text" placeholder="Enter skill name" id="skillName" required>
-                        </div>
-                        <div class="form-actions">
-                            <button type="button" class="button -sm bg-dark-1 text-light1" id="closeSkillModal">Cancel</button>
-                            <button type="submit" class="button -sm bg-purple-1 text-light1">Save</button>
-                        </div>
+                            <input
+                              type="text"
+                              placeholder="Enter skill name"
+                              id="skillName"
+                              required
+                            />
+                          </div>
+                          <div class="form-actions">
+                            <button
+                              type="button"
+                              class="button -sm bg-dark-1 text-light1"
+                              id="closeSkillModal"
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              type="submit"
+                              class="button -sm bg-purple-1 text-light1"
+                            >
+                              Save
+                            </button>
+                          </div>
                         </form>
+                      </div>
                     </div>
-                    </div>
-
 
                     <!-- 🧾 Certifications Section -->
-                    <div class="cert-section" style="margin-top: 50px;">
-                    <div class="d-flex justify-between align-center">
-                        <h5 class="text-20 lh-13 text-purple-1">Certifications</h5>
+                    <div class="cert-section" style="margin-top: 50px">
+                      <div class="d-flex justify-between align-center">
+                        <h5 class="text-20 lh-13 text-purple-1">
+                          Certifications
+                        </h5>
                         <div class="d-flex justify-between align-center">
-                        <button class="button -sm bg-purple-1 text-light1" id="addCertBtn" style="margin-right: 8px;">
-                            <i class="fa fa-plus" style="margin-right: 8px;"></i> Add
-                        </button>
-                        <button class="button -sm bg-purple-1 text-light1">
-                            <i class="fa fa-pencil" style="margin-right: 8px;"></i> Edit
-                        </button>
+                          <button
+                            class="button -sm bg-purple-1 text-light1"
+                            id="addCertBtn"
+                            style="margin-right: 8px"
+                          >
+                            <i class="fa fa-plus" style="margin-right: 8px"></i>
+                            Add
+                          </button>
+                          <button class="button -sm bg-purple-1 text-light1">
+                            <i
+                              class="fa fa-pencil"
+                              style="margin-right: 8px"
+                            ></i>
+                            Edit
+                          </button>
                         </div>
-                    </div>
+                      </div>
 
-                    <div class="cert-list mt-30">
+                      <div class="cert-list mt-30">
                         <div class="cert-item border-bottom-light pb-20 mb-20">
-                        <h6 class="text-17 fw-600 text-dark-1">AWS Certified Developer</h6>
-                        <p class="text-15 text-dark-2">Amazon Web Services</p>
-                        <p class="text-15 text-dark-2">Issued: 2023</p>
+                          <h6 class="text-17 fw-600 text-dark-1">
+                            AWS Certified Developer
+                          </h6>
+                          <p class="text-15 text-dark-2">Amazon Web Services</p>
+                          <p class="text-15 text-dark-2">Issued: 2023</p>
                         </div>
-                    </div>
+                      </div>
                     </div>
 
                     <!-- Certifications Popup -->
                     <div class="custom-modal-overlay" id="certModal">
-                    <div class="custom-modal">
-                        <h5 class="text-18 fw-600 text-purple-1 mb-20">Add Certification</h5>
+                      <div class="custom-modal">
+                        <h5 class="text-18 fw-600 text-purple-1 mb-20">
+                          Add Certification
+                        </h5>
                         <form id="certForm" class="custom-form">
-                        <div class="form-group">
+                          <div class="form-group">
                             <label>Certification Name</label>
-                            <input type="text" placeholder="e.g. AWS Certified Developer" id="certName" required>
-                        </div>
-                        <div class="form-group">
+                            <input
+                              type="text"
+                              placeholder="e.g. AWS Certified Developer"
+                              id="certName"
+                              required
+                            />
+                          </div>
+                          <div class="form-group">
                             <label>Issuing Organization</label>
-                            <input type="text" placeholder="e.g. Amazon Web Services" id="certOrg">
-                        </div>
-                        <div class="form-group">
+                            <input
+                              type="text"
+                              placeholder="e.g. Amazon Web Services"
+                              id="certOrg"
+                            />
+                          </div>
+                          <div class="form-group">
                             <label>Issued Year</label>
-                            <input type="text" placeholder="e.g. 2023" id="certYear">
-                        </div>
-                        <div class="form-actions">
-                            <button type="button" class="button -sm bg-dark-1 text-light1" id="closeCertModal">Cancel</button>
-                            <button type="submit" class="button -sm bg-purple-1 text-light1">Save</button>
-                        </div>
+                            <input
+                              type="text"
+                              placeholder="e.g. 2023"
+                              id="certYear"
+                            />
+                          </div>
+                          <div class="form-actions">
+                            <button
+                              type="button"
+                              class="button -sm bg-dark-1 text-light1"
+                              id="closeCertModal"
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              type="submit"
+                              class="button -sm bg-purple-1 text-light1"
+                            >
+                              Save
+                            </button>
+                          </div>
                         </form>
+                      </div>
                     </div>
-                    </div>
-
 
                     <!-- 💼 Projects Section -->
-                    <div class="project-section" style="margin-top: 50px;">
-                    <div class="d-flex justify-between align-center">
+                    <div class="project-section" style="margin-top: 50px">
+                      <div class="d-flex justify-between align-center">
                         <h5 class="text-20 lh-13 text-purple-1">Projects</h5>
                         <div class="d-flex justify-between align-center">
-                        <button class="button -sm bg-purple-1 text-light1" id="addProjectBtn" style="margin-right: 8px;">
-                            <i class="fa fa-plus" style="margin-right: 8px;"></i> Add
-                        </button>
-                        <!-- <button class="button -sm bg-purple-1 text-light1">
+                          <button
+                            class="button -sm bg-purple-1 text-light1"
+                            id="addProjectBtn"
+                            style="margin-right: 8px"
+                          >
+                            <i class="fa fa-plus" style="margin-right: 8px"></i>
+                            Add
+                          </button>
+                          <!-- <button class="button -sm bg-purple-1 text-light1">
                             <i class="fa fa-pencil" style="margin-right: 8px;"></i> Edit
                         </button> -->
                         </div>
-                    </div>
+                      </div>
 
-                    <div class="project-list mt-30" id="projectList">
+                      <div class="project-list mt-30" id="projectList">
                         <!-- <div class="project-item border-bottom-light pb-20 mb-20">
                         <h6 class="text-17 fw-600 text-dark-1">LMS Web Application</h6>
                         <p class="text-15 text-dark-2">A learning management system built using MERN stack.</p>
                         <p class="text-15 text-dark-2">Duration: 2023 – 2024</p>
                         </div> -->
-                    </div>
+                      </div>
                     </div>
 
                     <!-- Projects Popup -->
                     <div class="custom-modal-overlay" id="projectModal">
-                        <div class="custom-modal">
-                            <h5 class="text-18 fw-600 text-purple-1 mb-20" id="modalTitle">Add Project</h5>
-                            <form id="projectForm" class="custom-form">
-                                <div class="row justify-center items-center">
-                                    <input type="hidden" id="projectId" />
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label>Project Title</label>
-                                            <input type="text" placeholder="Enter project title" id="projectTitle" required>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Description</label>
-                                            <textarea rows="3" placeholder="Short description about the project" id="projectDesc"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <label>Duration</label>
-                                            <input type="text" placeholder="e.g. Jan 2023 – May 2024" id="projectDuration">
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <label>Role</label>
-                                            <input type="text" placeholder="Your role in project" id="projectRole">
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <label>Technologies Used</label>
-                                            <input type="text" placeholder="e.g. React, Node.js, MongoDB" id="projectTech">
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <label>Team Size</label>
-                                            <input type="number" placeholder="e.g. 4" id="projectTeam">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label>Project URL</label>
-                                            <input type="text" placeholder="https://github.com/yourproject" id="projectURL">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-actions">
-                                <button type="button" class="button -sm bg-dark-1 text-light1" id="closeProjectModal">Cancel</button>
-                                <button type="submit" class="button -sm bg-purple-1 text-light1">Save</button>
+                      <div class="custom-modal">
+                        <h5
+                          class="text-18 fw-600 text-purple-1 mb-20"
+                          id="modalTitle"
+                        >
+                          Add Project
+                        </h5>
+                        <form id="projectForm" class="custom-form">
+                          <div class="row justify-center items-center">
+                            <input type="hidden" id="projectId" />
+                            <div class="col-12">
+                              <div class="form-group">
+                                <label>Project Title</label>
+                                <input
+                                  type="text"
+                                  placeholder="Enter project title"
+                                  id="projectTitle"
+                                  required
+                                />
+                              </div>
                             </div>
 
-                            </form>
-                        </div>
+                            <div class="col-12">
+                              <div class="form-group">
+                                <label
+                                  class="text-16 lh-1 fw-500 text-dark-1 mb-10"
+                                  >Description</label
+                                >
+                                <textarea
+                                  rows="3"
+                                  placeholder="Short description about the project"
+                                  id="projectDesc"
+                                ></textarea>
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="form-group">
+                                <label>Duration</label>
+                                <input
+                                  type="text"
+                                  placeholder="e.g. Jan 2023 – May 2024"
+                                  id="projectDuration"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="form-group">
+                                <label>Role</label>
+                                <input
+                                  type="text"
+                                  placeholder="Your role in project"
+                                  id="projectRole"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="form-group">
+                                <label>Technologies Used</label>
+                                <input
+                                  type="text"
+                                  placeholder="e.g. React, Node.js, MongoDB"
+                                  id="projectTech"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="form-group">
+                                <label>Team Size</label>
+                                <input
+                                  type="number"
+                                  placeholder="e.g. 4"
+                                  id="projectTeam"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <div class="form-group">
+                                <label>Project URL</label>
+                                <input
+                                  type="text"
+                                  placeholder="https://github.com/yourproject"
+                                  id="projectURL"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-actions">
+                            <button
+                              type="button"
+                              class="button -sm bg-dark-1 text-light1"
+                              id="closeProjectModal"
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              type="submit"
+                              class="button -sm bg-purple-1 text-light1"
+                            >
+                              Save
+                            </button>
+                          </div>
+                        </form>
+                      </div>
                     </div>
-
 
                     <!-- 🧑‍💼 Experience Section -->
-                    <div class="exp-section" style="margin-top: 50px;">
-                    <div class="d-flex justify-between align-center">
+                    <div class="exp-section" style="margin-top: 50px">
+                      <div class="d-flex justify-between align-center">
                         <h5 class="text-20 lh-13 text-purple-1">Experience</h5>
                         <div class="d-flex justify-between align-center">
-                        <button class="button -sm bg-purple-1 text-light1" id="addExpBtn" style="margin-right: 8px;">
-                            <i class="fa fa-plus" style="margin-right: 8px;"></i> Add
-                        </button>
-                        <button class="button -sm bg-purple-1 text-light1">
-                            <i class="fa fa-pencil" style="margin-right: 8px;"></i> Edit
-                        </button>
+                          <button
+                            class="button -sm bg-purple-1 text-light1"
+                            id="addExpBtn"
+                            style="margin-right: 8px"
+                          >
+                            <i class="fa fa-plus" style="margin-right: 8px"></i>
+                            Add
+                          </button>
+                          <button class="button -sm bg-purple-1 text-light1">
+                            <i
+                              class="fa fa-pencil"
+                              style="margin-right: 8px"
+                            ></i>
+                            Edit
+                          </button>
                         </div>
-                    </div>
+                      </div>
 
-                    <div class="exp-list mt-30">
+                      <div class="exp-list mt-30">
                         <div class="exp-item border-bottom-light pb-20 mb-20">
-                        <h6 class="text-17 fw-600 text-dark-1">Software Developer</h6>
-                        <p class="text-15 text-dark-2">XYZ Technologies</p>
-                        <p class="text-15 text-dark-2">2022 – Present</p>
-                        <p class="text-15 text-dark-2">Worked on backend services using Node.js and MongoDB.</p>
+                          <h6 class="text-17 fw-600 text-dark-1">
+                            Software Developer
+                          </h6>
+                          <p class="text-15 text-dark-2">XYZ Technologies</p>
+                          <p class="text-15 text-dark-2">2022 – Present</p>
+                          <p class="text-15 text-dark-2">
+                            Worked on backend services using Node.js and
+                            MongoDB.
+                          </p>
                         </div>
-                    </div>
+                      </div>
                     </div>
 
                     <!-- Experience Popup -->
                     <div class="custom-modal-overlay" id="expModal">
-                    <div class="custom-modal">
-                        <h5 class="text-18 fw-600 text-purple-1 mb-20">Add Experience</h5>
+                      <div class="custom-modal">
+                        <h5 class="text-18 fw-600 text-purple-1 mb-20">
+                          Add Experience
+                        </h5>
                         <form id="expForm" class="custom-form">
-                        <div class="form-group">
+                          <div class="form-group">
                             <label>Job Title</label>
-                            <input type="text" placeholder="Enter job title" id="jobTitle" required>
-                        </div>
-                        <div class="form-group">
+                            <input
+                              type="text"
+                              placeholder="Enter job title"
+                              id="jobTitle"
+                              required
+                            />
+                          </div>
+                          <div class="form-group">
                             <label>Company Name</label>
-                            <input type="text" placeholder="Enter company name" id="companyName" required>
-                        </div>
-                        <div class="form-group">
+                            <input
+                              type="text"
+                              placeholder="Enter company name"
+                              id="companyName"
+                              required
+                            />
+                          </div>
+                          <div class="form-group">
                             <label>Duration</label>
-                            <input type="text" placeholder="e.g. 2022 – Present" id="jobDuration">
-                        </div>
-                        <div class="form-group">
+                            <input
+                              type="text"
+                              placeholder="e.g. 2022 – Present"
+                              id="jobDuration"
+                            />
+                          </div>
+                          <div class="form-group">
                             <label>Description</label>
-                            <input type="text" placeholder="Short role description" id="jobDesc">
-                        </div>
-                        <div class="form-actions">
-                            <button type="button" class="button -sm bg-dark-1 text-light1" id="closeExpModal">Cancel</button>
-                            <button type="submit" class="button -sm bg-purple-1 text-light1">Save</button>
-                        </div>
+                            <input
+                              type="text"
+                              placeholder="Short role description"
+                              id="jobDesc"
+                            />
+                          </div>
+                          <div class="form-actions">
+                            <button
+                              type="button"
+                              class="button -sm bg-dark-1 text-light1"
+                              id="closeExpModal"
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              type="submit"
+                              class="button -sm bg-purple-1 text-light1"
+                            >
+                              Save
+                            </button>
+                          </div>
                         </form>
-                    </div>
+                      </div>
                     </div>
 
                     <!-- 📄 Upload Resume -->
-                    <div class="info-card" style="margin-top: 50px;">
-                    <h5 class="text-20 lh-13 text-purple-1">Upload Resume</h5>
-                    <form class="contact-form respondForm__form row y-gap-20 pt-30" onsubmit="saveResume(event)">
+                    <div class="info-card" style="margin-top: 50px">
+                      <h5 class="text-20 lh-13 text-purple-1">Upload Resume</h5>
+                      <form
+                        class="contact-form respondForm__form row y-gap-20 pt-30"
+                        onsubmit="saveResume(event)"
+                      >
                         <div class="col-12">
-                        <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Resume File</label>
-                        <div class="upload-box" id="resumeUploadBox">
-                            <input type="file" id="resumeFile" accept=".pdf,.doc,.docx" hidden />
+                          <label class="text-16 lh-1 fw-500 text-dark-1 mb-10"
+                            >Resume File</label
+                          >
+                          <div class="upload-box" id="resumeUploadBox">
+                            <input
+                              type="file"
+                              id="resumeFile"
+                              accept=".pdf,.doc,.docx"
+                              hidden
+                            />
                             <i class="fa fa-cloud-upload upload-icon"></i>
-                            <p class="upload-text">Drag & Drop your resume here or <span class="browse">browse</span></p>
-                            <p id="resumeFileName" class="uploaded-file-name"></p>
-                        </div>
+                            <p class="upload-text">
+                              Drag & Drop your resume here or
+                              <span class="browse">browse</span>
+                            </p>
+                            <p
+                              id="resumeFileName"
+                              class="uploaded-file-name"
+                            ></p>
+                          </div>
                         </div>
                         <div class="col-12">
-                        <button type="submit" class="button -md fw-500 bg-purple-1 text-light1 float-right">Save</button>
+                          <button
+                            type="submit"
+                            class="button -md fw-500 bg-purple-1 text-light1 float-right"
+                          >
+                            Save
+                          </button>
                         </div>
-                    </form>
+                      </form>
                     </div>
 
                     <!-- 🖼️ Upload Portfolio -->
-                    <div class="info-card" style="margin-top: 50px;">
-                    <h5 class="text-20 lh-13 text-purple-1">Upload Portfolio</h5>
-                    <form class="contact-form respondForm__form row y-gap-20 pt-30" onsubmit="savePortfolio(event)">
+                    <div class="info-card" style="margin-top: 50px">
+                      <h5 class="text-20 lh-13 text-purple-1">
+                        Upload Portfolio
+                      </h5>
+                      <form
+                        class="contact-form respondForm__form row y-gap-20 pt-30"
+                        onsubmit="savePortfolio(event)"
+                      >
                         <div class="col-12">
-                        <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Portfolio File</label>
-                        <div class="upload-box" id="portfolioUploadBox">
-                            <input type="file" id="portfolioFile" accept=".pdf,.ppt,.pptx,.zip" hidden />
+                          <label class="text-16 lh-1 fw-500 text-dark-1 mb-10"
+                            >Portfolio File</label
+                          >
+                          <div class="upload-box" id="portfolioUploadBox">
+                            <input
+                              type="file"
+                              id="portfolioFile"
+                              accept=".pdf,.ppt,.pptx,.zip"
+                              hidden
+                            />
                             <i class="fa fa-cloud-upload upload-icon"></i>
-                            <p class="upload-text">Drag & Drop your portfolio here or <span class="browse">browse</span></p>
-                            <p id="portfolioFileName" class="uploaded-file-name"></p>
-                        </div>
+                            <p class="upload-text">
+                              Drag & Drop your portfolio here or
+                              <span class="browse">browse</span>
+                            </p>
+                            <p
+                              id="portfolioFileName"
+                              class="uploaded-file-name"
+                            ></p>
+                          </div>
                         </div>
                         <div class="col-12">
-                        <button type="submit" class="button -md fw-500 bg-purple-1 text-light1 float-right">Save</button>
+                          <button
+                            type="submit"
+                            class="button -md fw-500 bg-purple-1 text-light1 float-right"
+                          >
+                            Save
+                          </button>
                         </div>
-                    </form>
+                      </form>
                     </div>
 
-
-
-
-
-                    <div class="lh-12 fw-500 text-center mt-20"id="message"></div>
+                    <div
+                      class="lh-12 fw-500 text-center mt-20"
+                      id="message"
+                    ></div>
                   </div>
                 </div>
               </div>
@@ -591,6 +886,6 @@
     <script src="/js/logout.js"></script>
     <script src="/js/portfolio.js"></script>
     <script src="/js/projects.js"></script>
-    
+    <script src="/js/educationfe.js"></script>
   </body>
 </html>

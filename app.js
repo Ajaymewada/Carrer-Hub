@@ -6,6 +6,7 @@ var cors = require('cors')
 
 const userRoutes = require("./routes/userRoutes");
 const projectRoutes = require("./routes/projectRoutes");
+const educationRoutes = require("./routes/educationRoutes");
 
 const app = express();
 app.use(cors())
@@ -23,6 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use("/api/users", userRoutes);
 app.use("/api/projects", projectRoutes);
+app.use("/api/education", educationRoutes);
 
 // Serve index.html on root route
 app.get("/", (req, res) => {
@@ -43,6 +45,11 @@ app.get("/signup", (req, res) => {
 
 app.get("/portfolio", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "portfoliofinal.html"));
+});
+
+
+app.get("/businessprojects", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "businessprojects.view.html"));
 });
 
 // Connect to MongoDB Atlas

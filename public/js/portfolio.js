@@ -1,35 +1,4 @@
-document.getElementById("addEducationBtn").addEventListener("click", function() {
-  document.getElementById("educationModal").style.display = "flex";
-});
 
-document.getElementById("closeModalBtn").addEventListener("click", function() {
-  document.getElementById("educationModal").style.display = "none";
-});
-
-document.getElementById("educationForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  // Example: Add new education entry dynamically
-  const institute = document.getElementById("instituteName").value;
-  const degree = document.getElementById("degreeName").value;
-  const field = document.getElementById("fieldOfStudy").value;
-  const start = document.getElementById("startYear").value;
-  const end = document.getElementById("endYear").value;
-  const grade = document.getElementById("grade").value;
-
-  const newEntry = `
-    <div class="education-item border-bottom-light pb-20 mb-20">
-      <h6 class="text-17 fw-600 text-dark-1">${institute}</h6>
-      <p class="text-15 text-dark-2">${degree}${field ? `, ${field}` : ''}</p>
-      <p class="text-15 text-dark-2">${start} – ${end}</p>
-      <p class="text-15 text-dark-2">Grade: ${grade}</p>
-    </div>
-  `;
-
-  document.querySelector(".education-list").insertAdjacentHTML("beforeend", newEntry);
-  document.getElementById("educationModal").style.display = "none";
-  e.target.reset();
-});
 
 // Utility: open & close modal
 function openModal(id) {
