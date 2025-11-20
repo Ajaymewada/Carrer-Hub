@@ -15716,3 +15716,99 @@ table.table td {
   border-radius: 100%;
   background: white;
 }
+
+
+
+
+
+
+.mba-modern-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.mba-modern-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 35px;
+    color: #2b2b2b;
+}
+
+.mba-modern-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 22px;
+    margin-top: 20px;
+}
+
+.mba-modern-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 22px 24px;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+    border: 1px solid #ececec;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mba-modern-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+
+.mba-modern-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #3d3d3d;
+}
+
+.mba-modern-card p,
+.mba-modern-card ul li {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.mba-modern-card ul {
+    padding-left: 18px;
+}
+
+/* FULL ROW CARDS */
+.full-row {
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+}
+
+/* Download Button */
+.mba-download-btn {
+    margin-top: 14px;
+    background: #6a5acd;
+    color: #fff;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.mba-download-btn:hover {
+    background: #5a4ac8;
+}
+
+/* Large text */
+.big-text {
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* Certification box */
+.cert-space {
+    height: 200px;
+    border: 2px dashed #bfbfbf;
+    border-radius: 8px;
+    padding: 10px;
+}

@@ -22,6 +22,16 @@
   <link rel="stylesheet" href="css/main.css">
 
   <title>Career Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+    .mba-modern-container ul li{
+        list-style-type: disclosure-open !important;
+        padding-bottom: 10px;
+    }
+  </style>
 </head>
 
 <body class="preloader-visible" data-barba="wrapper">
@@ -207,120 +217,144 @@
       </div>
     </header>
 
+
     <div class="content-wrapper  js-content-wrapper">
-         <section class="layout-pt-md layout-pb-lg">
+
+      <section class="layout-pt-lg layout-pb-lg">
         <div data-anim-wrap class="container">
-          <div class="row">
-              <section class="layout-pt-lg layout-pb-lg bg-light-6">
-        <div data-anim-wrap="" class="container animated">
-          <div data-anim-child="slide-left delay-1" class="row y-gap-20 justify-between items-center is-in-view">
-            <div class="col-lg-6">
+            <div data-anim-child="slide-left delay-1" class="mba-modern-container row y-gap-20 justify-between items-center is-in-view">
+            <div class="col-lg-12">
 
               <div class="sectionTitle ">
 
-                <h2 class="sectionTitle__title ">Business Projects</h2>
+                <h2 class="sectionTitle__title ">Market Basket Analysis</h2>
 
-                <p class="sectionTitle__text ">Explore real world analytics and business projects</p>
+                <p class="sectionTitle__text">
+    Discover how customer purchasing patterns reveal powerful product relationships.
 
               </div>
 
             </div>
         </div>
+          <div class="mba-modern-container">
 
-          <div class="row y-gap-30 pt-60">
+                <!-- FULL-WIDTH DESCRIPTION -->
+                <div class="mba-modern-card full-row">
+                    <h3>Description</h3>
+                    <p>
+                        Market Basket Analysis (MBA) is a data-driven technique used to uncover hidden patterns in customer 
+                        purchase behaviour. By analysing transaction-level data, MBA identifies products that are frequently 
+                        bought together, helping businesses make informed decisions related to product bundling, store layout, 
+                        inventory planning, pricing, and cross-selling opportunities.
+                    </p>
+                </div>
 
-            <div class="col-lg-4 col-md-6">
-              <div data-anim-child="slide-left delay-2" class="blogCard -type-1 rounded-8 border-light shadow-1 overflow-hidden is-in-view">
-                <div class="blogCard__image ratio ratio-3:2">
-                  <img class="img-ratio" src="https://365datascience.com/resources/blog/76d23eoyf32-market-basket-analysis-frequent-items.jpeg" alt="image">
+                <!-- FULL-WIDTH OBJECTIVE -->
+                <div class="mba-modern-card full-row">
+                    <h3>Objective</h3>
+                    <p>
+                        To discover meaningful product associations and leverage these insights to enhance customer experience, 
+                        drive revenue growth, improve product placement strategies, and strengthen marketing campaigns through 
+                        targeted recommendations and intelligent cross-sell/upsell strategies.
+                    </p>
                 </div>
-                <div class="px-30 py-30 bg-white">
-                  <h4 class="text-17 lh-15 fw-500">Market Basket analysis analyze transaction data to find product association</h4>
-                  <a href="/marketbasket">
-                    <button class="button -xs bg-purple-1 text-light1" style="padding:10px; margin-top: 10px; margin-bottom: 10px;">
-                  <i class="fa fa-eye" style="padding-right: 5px;"></i> View Project
-                  </button>
-                  </a>
+
+                <div class="mba-modern-grid">
+
+                    <div class="mba-modern-card">
+                        <h3>Tools</h3>
+                        <ul>
+                            <li>Excel / Google Sheets for preliminary analysis</li>
+                            <li>Python (Pandas, Mlxtend) for algorithm-based processing</li>
+                            <li>Tableau / Power BI for interactive dashboards</li>
+                            <li>Data Visualization Tools for pattern interpretation</li>
+                        </ul>
+                    </div>
+
+                    <div class="mba-modern-card">
+                        <h3>Data Alignment</h3>
+                        <ul>
+                            <li>Data Analyst for transaction-level data preparation</li>
+                            <li>Business Analyst for requirement alignment & interpretation</li>
+                            <li>Category Manager for product hierarchy validation</li>
+                            <li>Data Engineer for preprocessing support (if needed)</li>
+                        </ul>
+                    </div>
+
+                    <div class="mba-modern-card">
+                        <h3>Key Concepts</h3>
+                        <ul>
+                            <li>Support, Confidence & Lift for analysing association strength</li>
+                            <li>Apriori & FP-Growth algorithms for efficient rule mining</li>
+                            <li>Identifying high-value itemsets and shopping patterns</li>
+                            <li>Translating discovered patterns into business strategies</li>
+                        </ul>
+                    </div>
+
+                    <div class="mba-modern-card">
+                        <h3>Project Assets</h3>
+                        <ul>
+                            <li>Cleaned & structured dataset for analysis</li>
+                            <li>Interactive association dashboard</li>
+                            <li>Insights & recommendation document</li>
+                            <li>Visual charts (heatmaps, network graphs)</li>
+                        </ul>
+                    </div>
+                    <div class="mba-modern-card">
+                        <h3>Deliverables</h3>
+                        <ul>
+                            <li>Dashboard showcasing product associations</li>
+                            <li>Data-driven recommendations for cross-sell strategies</li>
+                            <li>Executive insights summarising key transactions</li>
+                            <li>Visual reports indicating high-lift item combinations</li>
+                        </ul>
+                    </div>
+
+                    
+
+                    <div class="mba-modern-card">
+                        <h3>Estimated Completion Time</h3>
+                        <p class="big-text">8–10 hours</p>
+                    </div>
+
+                    <div class="mba-modern-card">
+                        <h3>Dataset</h3>
+                        <ul>
+                            <li>Customer purchase transactions</li>
+                            <li>Product category & hierarchy mapping</li>
+                            <li>Item-level descriptive attributes</li>
+                            <li>SKU-level transaction sequences</li>
+                        </ul>
+                        <a href="/Prototype_Market_Basket_Analysis.docx" download>
+                          <button class="mba-download-btn">Download</button>
+                        </a>
+                        
+                    </div>
+
+                    <div class="mba-modern-card">
+                        <h3>Impact Metrics</h3>
+                        <ul>
+                            <li>Increase in revenue via cross-sell opportunities</li>
+                            <li>Improved inventory & product placement decisions</li>
+                            <li>Customer basket value uplift</li>
+                            <li>Better campaign targeting & personalization</li>
+                        </ul>
+                    </div>
+                    
+
+                    <div class="mba-modern-card">
+                        <h3>Certification Earned</h3>
+                        <div class="cert-space">
+                            <ul>
+                                <li>Market Basket Analysis Practitioner</li>
+                                <li>Data Insights & Visualization Certificate</li>
+                                <li>Retail Analytics & Pattern Mining Certification</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
-              </div>
             </div>
-
-            <div class="col-lg-4 col-md-6">
-              <div data-anim-child="slide-left delay-2" class="blogCard -type-1 rounded-8 border-light shadow-1 overflow-hidden is-in-view">
-                <div class="blogCard__image ratio ratio-3:2">
-                  <img class="img-ratio" src="https://www.superheuristics.com/wp-content/uploads/2018/09/Sales-Forecasting.png" alt="image">
-                </div>
-                <div class="px-30 py-30 bg-white">
-                  <h4 class="text-17 lh-15 fw-500">Sales Forecasting Predict future sales using historical data</h4>
-                  <button class="button -xs bg-purple-1 text-light1" style="padding:10px; margin-top: 10px; margin-bottom: 10px;">
-                  <i class="fa fa-eye" style="padding-right: 5px;"></i> View Project
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <div data-anim-child="slide-left delay-2" class="blogCard -type-1 rounded-8 border-light shadow-1 overflow-hidden is-in-view">
-                <div class="blogCard__image ratio ratio-3:2">
-                  <img class="img-ratio" src="https://www.omniconvert.com/wp-content/uploads/2024/04/customer-behaviour-segmentation.webp" alt="image">
-                </div>
-                <div class="px-30 py-30 bg-white">
-                  <h4 class="text-17 lh-15 fw-500">Customer Segmentation Identify distinct customer groups</h4>
-                  <button class="button -xs bg-purple-1 text-light1" style="padding:10px; margin-top: 10px; margin-bottom: 10px;">
-                  <i class="fa fa-eye" style="padding-right: 5px;"></i> View Project
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <div data-anim-child="slide-left delay-2" class="blogCard -type-1 rounded-8 border-light shadow-1 overflow-hidden is-in-view">
-                <div class="blogCard__image ratio ratio-3:2">
-                  <img class="img-ratio" src="https://www.hashstudioz.com/blog/wp-content/uploads/2025/02/Churn-Prediction-in-Retail-How-Data-Analytics-Improves-Customer-Retention-1.png" alt="image">
-                </div>
-                <div class="px-30 py-30 bg-white">
-                  <h4 class="text-17 lh-15 fw-500">Churn Prediction Detect customers likely to leave</h4>
-                  <button class="button -xs bg-purple-1 text-light1" style="padding:10px; margin-top: 10px; margin-bottom: 10px;">
-                  <i class="fa fa-eye" style="padding-right: 5px;"></i> View Project
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <div data-anim-child="slide-left delay-2" class="blogCard -type-1 rounded-8 border-light shadow-1 overflow-hidden is-in-view">
-                <div class="blogCard__image ratio ratio-3:2">
-                  <img class="img-ratio" src="https://www.speedcommerce.com/wp-content/uploads/2023/11/SC-Inventory-Optimization-1024x512.jpg" alt="image">
-                </div>
-                <div class="px-30 py-30 bg-white">
-                  <h4 class="text-17 lh-15 fw-500">Inventory Optimization
-Optimize inventory levels to reduce costs</h4>
-                  <button class="button -xs bg-purple-1 text-light1" style="padding:10px; margin-top: 10px; margin-bottom: 10px;">
-                  <i class="fa fa-eye" style="padding-right: 5px;"></i> View Project
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <div data-anim-child="slide-left delay-2" class="blogCard -type-1 rounded-8 border-light shadow-1 overflow-hidden is-in-view">
-                <div class="blogCard__image ratio ratio-3:2">
-                  <img class="img-ratio" src="https://images.klipfolio.com/website/public/d63c9871-ce77-48d4-a7af-c9d6129091cf/kpi-dashboard.png" alt="image">
-                </div>
-                <div class="px-30 py-30 bg-white">
-                  <h4 class="text-17 lh-15 fw-500">Financial KPI Dashboard
-Create a dashboard for key metrics</h4>
-                  <button class="button -xs bg-purple-1 text-light1" style="padding:10px; margin-top: 10px; margin-bottom: 10px;">
-                  <i class="fa fa-eye" style="padding-right: 5px;"></i> View Project
-                  </button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-          </div>
         </div>
       </section>
 
