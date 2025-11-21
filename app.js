@@ -56,9 +56,9 @@ app.get("/marketbasket", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "marketbasket.html"));
 });
 
-// app.get("/marketbasket", (req, res) => {
-//   res.sendFile(path.join(__dirname, "views", "marketbasket.html"));
-// });
+app.get("/customerchurn", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "customerchurn.html"));
+});
 
 // Connect to MongoDB Atlas
 mongoose.connect("mongodb+srv://venucareerhub:KhnY0FgkOryTtmbp@cluster0.qjilknk.mongodb.net/?appName=Cluster0", {
