@@ -44,9 +44,12 @@ app.get("/signup", (req, res) => {
 });
 
 app.get("/portfolio", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "portfoliofinal.html"));
+  res.sendFile(path.join(__dirname, "views", "portfolio.html"));
 });
 
+app.get("/profile", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "profile.html"));
+});
 
 app.get("/businessprojects", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "businessprojects.view.html"));
