@@ -1,10 +1,17 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { addProject, getProjectsByUser, getProjectById, updateProject} = require('../controllers/projectController');
+const upload = require("../middleware/uploadProject");
 
-router.post('/addproject', addProject);
-router.get('/myprojects/:useruid', getProjectsByUser);
-router.get('/getProjectById/:id', getProjectById);
-router.put('/updateProject/:id', updateProject);
+const projectController = require("../controllers/projectController");
+
+// GET all projects
+router.get("/getprojects", projectController.getProjects);
+
+// GET project by ID
+router.get("/getprojects/:id", projectController.getProjectById);
+
+// upload.single("projectFile") ==> same name from frontend
+router.post("/create", upload.single("projectFile"), projectController.createProject);
+
 
 module.exports = router;

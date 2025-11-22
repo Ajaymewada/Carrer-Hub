@@ -1,75 +1,103 @@
-const Project = require('../models/Project');
+// controllers/projectController.js
+const Project = require("../models/Project");
 
-// ➕ Add a project
-exports.addProject = async (req, res) => {
+exports.createProject = async (req, res) => {
   try {
-    const { useruid, title, description, duration, role, technologies, teamSize, projectURL } = req.body;
+    const {
+      projectTitle,
+      description,
+      objective,
+      dataAssignment,
+      keyConcepts,
+      projectAssets,
+      dataset,
+      deliverables,
+      estimatedTime,
+      impactMetrics,
+    } = req.body;
 
-    if (!title) return res.status(400).json({ success: false, message: 'Project title is required' });
+    let tools = [];
+    let certifications = [];
+
+    if (req.body.tools) {
+      try {
+        // If sent as JSON string: '[ "React", "Angular" ]'
+        tools = JSON.parse(req.body.tools);
+      } catch (err) {
+        // If sent as CSV: "React,Angular"
+        tools = req.body.tools.split(",");
+      }
+    }
+
+    if (req.body.certifications) {
+      try {
+        certifications = JSON.parse(req.body.certifications);
+      } catch (err) {
+        certifications = req.body.certifications.split(",");
+      }
+    }
+
+    // File path
+    const filePath = req.file ? "/uploads/projects/" + req.file.filename : null;
 
     const newProject = new Project({
-      useruid: useruid,
-      title,
+      projectTitle,
       description,
-      duration,
-      role,
-      technologies,
-      teamSize,
-      projectURL,
+      objective,
+      tools,
+      dataAssignment,
+      keyConcepts,
+      projectAssets,
+      dataset,
+      deliverables,
+      estimatedTime,
+      impactMetrics,
+      certifications,
+      projectPrototype: filePath, // Save file path
     });
 
     await newProject.save();
 
-    res.status(201).json({ success: true, message: 'Project added successfully', project: newProject });
+    return res.status(201).json({
+      success: true,
+      message: "Project saved successfully",
+      data: newProject,
+    });
   } catch (error) {
-    console.error('Error adding project:', error);
-    res.status(500).json({ success: false, message: 'Server error', error: error.message });
+    console.error("Create project error:", error);
+    res.status(500).json({
+      success: false,
+      message: "Server error while saving project",
+    });
   }
 };
 
-// 📋 Get all projects
-// 📋 Get Projects by useruid
-exports.getProjectsByUser = async (req, res) => {
+// GET ALL PROJECTS
+exports.getProjects = async (req, res) => {
   try {
-    const { useruid } = req.params; // we'll send useruid as a route parameter
-
-    if (!useruid) {
-      return res.status(400).json({ success: false, message: 'User UID is required' });
-    }
-
-    const projects = await Project.find({ useruid }).sort({ createdAt: -1 });
-
-    if (!projects.length) {
-      return res.status(404).json({ success: false, message: 'No projects found for this user' });
-    }
-
-    res.status(200).json({ success: true, projects });
-  } catch (error) {
-    console.error('Error fetching user projects:', error);
-    res.status(500).json({ success: false, message: 'Server error', error: error.message });
+    const projects = await Project.find().sort({ createdAt: -1 });
+    res.json({ success: true, data: projects });
+  } catch (err) {
+    console.error("Error fetching projects:", err);
+    res.status(500).json({ success: false, message: "Server error" });
   }
 };
 
-// Get single project by ID
+// GET SINGLE PROJECT BY ID
 exports.getProjectById = async (req, res) => {
   try {
     const project = await Project.findById(req.params.id);
-    if (!project) return res.status(404).json({ success: false, message: "Project not found" });
-    res.status(200).json({ success: true, project });
-  } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+
+    if (!project) {
+      return res.status(404).json({
+        success: false,
+        message: "Project not found",
+      });
+    }
+
+    res.json({ success: true, data: project });
+  } catch (err) {
+    console.error("Error fetching project:", err);
+    res.status(500).json({ success: false, message: "Server error" });
   }
 };
-
-// Update project
-exports.updateProject = async (req, res) => {
-  try {
-    const updatedProject = await Project.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    if (!updatedProject) return res.status(404).json({ success: false, message: "Project not found" });
-    res.status(200).json({ success: true, message: "Project updated successfully", project: updatedProject });
-  } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
-  }
-};
-
-

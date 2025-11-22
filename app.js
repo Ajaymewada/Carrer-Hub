@@ -60,6 +60,14 @@ app.get("/customerchurn", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "customerchurn.html"));
 });
 
+app.get("/addeditproject", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "addeditproject.html"));
+});
+
+app.get("/projectview", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "projectview.html"));
+});
+
 // Connect to MongoDB Atlas
 mongoose.connect("mongodb+srv://venucareerhub:KhnY0FgkOryTtmbp@cluster0.qjilknk.mongodb.net/?appName=Cluster0", {
   useNewUrlParser: true,

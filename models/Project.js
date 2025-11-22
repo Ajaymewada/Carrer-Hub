@@ -1,21 +1,29 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const projectSchema = new mongoose.Schema(
+const ProjectSchema = new mongoose.Schema(
   {
-    title: { type: String, required: true, trim: true },
-    description: { type: String, trim: true },
-    duration: { type: String, trim: true },
-    role: { type: String, trim: true },
-    technologies: { type: String, trim: true },
-    teamSize: { type: Number },
-    projectURL: { type: String, trim: true },
-    useruid: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
-      required: true,
-    }
+    projectTitle: { type: String, required: true },
+
+    description: { type: String, required: true },
+    objective: { type: String, required: true },
+
+    tools: { type: [String], default: [] },
+
+    dataAssignment: { type: String, required: true },
+    keyConcepts: { type: String, required: true },
+    projectAssets: { type: String, required: true },
+    dataset: { type: String, required: true },
+    deliverables: { type: String, required: true },
+
+    estimatedTime: { type: String, required: true },
+
+    impactMetrics: { type: String, required: true },
+
+    certifications: { type: [String], default: [] },
+
+    projectPrototype: { type: String }, // <---- NEW FIELD
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model('Project', projectSchema);
+module.exports = mongoose.model("Project", ProjectSchema);
