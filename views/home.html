@@ -1,270 +1,787 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- Required meta tags -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Google fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com/">
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- <link rel="stylesheet" href="/cdn.jsdelivr.net/npm/choices.js/public/assets/styles/base.min.css" /> -->
-  <link rel="stylesheet" href="/cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+    <!-- <link rel="stylesheet" href="/cdn.jsdelivr.net/npm/choices.js/public/assets/styles/base.min.css" /> -->
+    <link
+      rel="stylesheet"
+      href="/cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    />
 
-  <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
-  <link rel="stylesheet" href="/cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="/unpkg.com/leaflet%401.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="/unpkg.com/leaflet%401.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/vendors.css">
-  <link rel="stylesheet" href="css/main.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/vendors.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <title>Career Hub</title>
-</head>
+    <!-- Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
 
-<body class="preloader-visible" data-barba="wrapper">
-  <!-- preloader start -->
-  <div class="preloader js-preloader">
-    <div class="preloader__bg"></div>
-  </div>
-  <!-- preloader end -->
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <title>Career Hub</title>
+    <style>
+      /* YOUR ORIGINAL CSS — unchanged */
+      body {
+        background: #f4f6f9;
+        font-family: "Poppins", sans-serif;
+      }
+      .sidebar {
+        width: 250px;
+        height: 100vh;
+        background: #1a2035;
+        color: #fff;
+        position: fixed;
+        left: 0;
+        top: 0;
+        padding: 25px 15px;
+      }
+      .sidebar h2 {
+        font-size: 22px;
+        margin-bottom: 30px;
+        text-align: center;
+        font-weight: 600;
+      }
+      .sidebar a {
+        display: block;
+        padding: 12px 15px;
+        text-decoration: none;
+        color: #c7c9d3;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        font-size: 15px;
+      }
+      .sidebar a:hover {
+        background: #272f4a;
+        color: #fff;
+      }
+      .content {
+        margin-left: 0px; /* since sidebar removed */
+        padding: 25px;
+      }
+      .profile-card {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .profile-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #dadada;
+      }
+      .tag {
+        background: #dfe7ff;
+        color: #4154f1;
+        padding: 5px 12px;
+        border-radius: 20px;
+        margin: 3px;
+        display: inline-block;
+        font-size: 12px;
+      }
+      .card-custom {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      }
+      .section-title {
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      .job-card {
+        background: #eef2ff;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 10px;
+      }
+      .job-card h6 {
+        margin-bottom: 3px;
+        font-weight: 600;
+      }
+      #projectPie {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto; /* centers the chart */
+      }
+      .card h4 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
 
-  <main class="main-content  ">
+      .card p {
+        font-size: 15px;
+      }
+      .applied-job-card {
+        background: #f9faff;
+        padding: 15px 20px;
+        border-radius: 12px;
+        margin-bottom: 15px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
 
-    <header data-anim="fade" data-add-bg="" class="header -type-4 -shadow bg-white js-header">
+      .job-meta {
+        color: #6c757d;
+      }
 
+      .job-status-row {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+      }
 
-      <div class="header__container border-bottom-light py-10">
-        <div class="row justify-between items-center">
+      .job-status,
+      .job-viewed {
+        font-size: 13px;
+        padding: 4px 8px;
+        border-radius: 8px;
+        font-weight: 500;
+      }
 
-          <div class="col-auto">
-            <div class="header-left d-flex items-center">
+      /* Status Colors */
+      .status-reviewed {
+        background: #e3f2fd;
+        color: #0d6efd;
+      }
+      .status-pending {
+        background: #fff3cd;
+        color: #856404;
+      }
+      .status-interview {
+        background: #d4edda;
+        color: #155724;
+      }
+      .status-rejected {
+        background: #f8d7da;
+        color: #721c24;
+      }
 
-              <div class="header__logo pr-30 xl:pr-20 md:pr-0">
-                <a data-barba href="#">
-                  <img width="225px;" src="/img/general/main-logo2.png" alt="logo">
-                </a>
-              </div>
+      /* Viewed Status */
+      .viewed-yes {
+        background: #d1e7dd;
+        color: #0f5132;
+      }
+      .viewed-no {
+        background: #f8d7da;
+        color: #842029;
+      }
+      .course-item {
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #f1f1f1;
+      }
 
+      .course-item:last-child {
+        border-bottom: none;
+      }
 
-              <div class="header-menu js-mobile-menu-toggle pl-30 xl:pl-20">
-                <div class="header-menu__content">
-                  <div class="mobile-bg js-mobile-bg"></div>
+      .course-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-                  <div class="d-none xl:d-flex items-center px-20 py-20 border-bottom-light">
-                    <a href="#" class="text-dark-1">Log Out</a>
-                  </div>
+      .course-header h6 {
+        margin: 0;
+        font-weight: 600;
+      }
+    </style>
+  </head>
 
-                  <div class="menu js-navList">
-                    <ul class="menu__nav text-dark-1 -is-active">
-                      <li>
-                        <a href="/home" style="cursor: pointer;">Home</a>
-                      </li>
+  <body class="preloader-visible" data-barba="wrapper">
+    <!-- preloader start -->
+    <div class="preloader js-preloader">
+      <div class="preloader__bg"></div>
+    </div>
+    <!-- preloader end -->
 
-                      <li class="-has-mega-menu">
-                        <a href="/profile" style="cursor: pointer;">Profile</a>
-                      </li>
-
-                      <li class="-has-mega-menu">
-                        <a href="#" style="cursor: pointer;">Courses</a>
-                      </li>
-
-                      <li class="-has-mega-menu">
-                        <a href="#" style="cursor: pointer;">My Learnings</a>
-                      </li>
-
-                       <li class="-has-mega-menu">
-                        <a href="/portfolio" style="cursor: pointer;">Portfolio</a>
-                      </li>
-
-                      <li class="-has-mega-menu">
-                          <a href="/businessprojects" style="cursor: pointer">Business Projects</a>
-                      </li>
-
-                      <li class="">
-                        <a href="#">Free Lance Jobs</a>
-                      </li>
-                    </ul>
-                  </div>
+    <main class="main-content">
+      <header
+        data-anim="fade"
+        data-add-bg=""
+        class="header -type-4 -shadow bg-white js-header"
+      >
+        <div class="header__container border-bottom-light py-10">
+          <div class="row justify-between items-center">
+            <div class="col-auto">
+              <div class="header-left d-flex items-center">
+                <div class="header__logo pr-30 xl:pr-20 md:pr-0">
+                  <a data-barba href="#">
+                    <img
+                      width="225px;"
+                      src="/img/general/main-logo2.png"
+                      alt="logo"
+                    />
+                  </a>
                 </div>
 
-                <div class="header-menu-close" data-el-toggle=".js-mobile-menu-toggle">
-                  <div class="size-40 d-flex items-center justify-center rounded-full bg-white">
-                    <div class="icon-close text-dark-1 text-16"></div>
+                <div class="header-menu js-mobile-menu-toggle pl-30 xl:pl-20">
+                  <div class="header-menu__content">
+                    <div class="mobile-bg js-mobile-bg"></div>
+
+                    <div
+                      class="d-none xl:d-flex items-center px-20 py-20 border-bottom-light"
+                    >
+                      <a href="#" class="text-dark-1">Log Out</a>
+                    </div>
+
+                    <div class="menu js-navList">
+                      <ul class="menu__nav text-dark-1 -is-active">
+                        <li>
+                          <a href="/home" style="cursor: pointer">Home</a>
+                        </li>
+
+                        <li class="-has-mega-menu">
+                          <a href="/profile" style="cursor: pointer">Profile</a>
+                        </li>
+
+                        <li class="-has-mega-menu">
+                          <a href="#" style="cursor: pointer">Courses</a>
+                        </li>
+
+                        <li class="-has-mega-menu">
+                          <a href="#" style="cursor: pointer">My Learnings</a>
+                        </li>
+
+                        <li class="-has-mega-menu">
+                          <a href="/portfolio" style="cursor: pointer"
+                            >Portfolio</a
+                          >
+                        </li>
+
+                        <li class="-has-mega-menu">
+                          <a href="/businessprojects" style="cursor: pointer"
+                            >Business Projects</a
+                          >
+                        </li>
+
+                        <li class="">
+                          <a href="#">Free Lance Jobs</a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
+
+                  <div
+                    class="header-menu-close"
+                    data-el-toggle=".js-mobile-menu-toggle"
+                  >
+                    <div
+                      class="size-40 d-flex items-center justify-center rounded-full bg-white"
+                    >
+                      <div class="icon-close text-dark-1 text-16"></div>
+                    </div>
+                  </div>
+
+                  <div class="header-menu-bg"></div>
                 </div>
-
-                <div class="header-menu-bg"></div>
               </div>
-
             </div>
-          </div>
 
-
-          <div class="col-auto">
-            <div class="header-right d-flex items-center">
-              <div class="header-right__icons text-white d-flex items-center">
-                <div class="header-search-field">
-                  <form action="#">
-                    <div class="header-search-field__group">
-                      <input type="text" placeholder="What do you want to learn?">
-                      <button type="submit">
-                        <i class="icon icon-search"></i>
-                      </button>
-                    </div>
-                  </form>
-                </div>
-
-
-                <div class="relative -after-border pl-20 sm:pl-15">
-                  <div class="toggle-element js-cart-toggle">
-                    <div class="header-cart bg-white -dark-bg-dark-1 rounded-8">
-                      <div class="px-30 pt-30 pb-10">
-
-                        <div class="row justify-between x-gap-40 pb-20">
-                          <div class="col">
-                            <div class="row x-gap-10 y-gap-10">
-                              <div class="col-auto">
-                                <img src="/img/menus/cart/1.png" alt="image">
-                              </div>
-
-                              <div class="col">
-                                <div class="text-dark-1 lh-15">The Ultimate Drawing Course Beginner to Advanced...</div>
-
-                                <div class="d-flex items-center mt-10">
-                                  <div class="lh-12 fw-500 line-through text-light-1 mr-10">$179</div>
-                                  <div class="text-18 lh-12 fw-500 text-dark-1">Free</div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="col-auto">
-                            <button><img src="/img/menus/close.svg" alt="icon"></button>
-                          </div>
-                        </div>
-
-                        <div class="row justify-between x-gap-40 pb-20">
-                          <div class="col">
-                            <div class="row x-gap-10 y-gap-10">
-                              <div class="col-auto">
-                                <img src="/img/menus/cart/2.png" alt="image">
-                              </div>
-
-                              <div class="col">
-                                <div class="text-dark-1 lh-15">User Experience Design Essentials - Adobe XD UI UX...</div>
-
-                                <div class="d-flex items-center mt-10">
-                                  <div class="lh-12 fw-500 line-through text-light-1 mr-10">$179</div>
-                                  <div class="text-18 lh-12 fw-500 text-dark-1">$79</div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="col-auto">
-                            <button><img src="/img/menus/close.svg" alt="icon"></button>
-                          </div>
-                        </div>
-
+            <div class="col-auto">
+              <div class="header-right d-flex items-center">
+                <div class="header-right__icons text-white d-flex items-center">
+                  <div class="header-search-field">
+                    <form action="#">
+                      <div class="header-search-field__group">
+                        <input
+                          type="text"
+                          placeholder="What do you want to learn?"
+                        />
+                        <button type="submit">
+                          <i class="icon icon-search"></i>
+                        </button>
                       </div>
+                    </form>
+                  </div>
 
-                      <div class="px-30 pt-20 pb-30 border-top-light">
-                        <div class="d-flex justify-between">
-                          <div class="text-18 lh-12 text-dark-1 fw-500">Total:</div>
-                          <div class="text-18 lh-12 text-dark-1 fw-500">$659</div>
+                  <div class="relative -after-border pl-20 sm:pl-15">
+                    <div class="toggle-element js-cart-toggle">
+                      <div
+                        class="header-cart bg-white -dark-bg-dark-1 rounded-8"
+                      >
+                        <div class="px-30 pt-30 pb-10">
+                          <div class="row justify-between x-gap-40 pb-20">
+                            <div class="col">
+                              <div class="row x-gap-10 y-gap-10">
+                                <div class="col-auto">
+                                  <img
+                                    src="/img/menus/cart/1.png"
+                                    alt="image"
+                                  />
+                                </div>
+
+                                <div class="col">
+                                  <div class="text-dark-1 lh-15">
+                                    The Ultimate Drawing Course Beginner to
+                                    Advanced...
+                                  </div>
+
+                                  <div class="d-flex items-center mt-10">
+                                    <div
+                                      class="lh-12 fw-500 line-through text-light-1 mr-10"
+                                    >
+                                      $179
+                                    </div>
+                                    <div
+                                      class="text-18 lh-12 fw-500 text-dark-1"
+                                    >
+                                      Free
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-auto">
+                              <button>
+                                <img src="/img/menus/close.svg" alt="icon" />
+                              </button>
+                            </div>
+                          </div>
+
+                          <div class="row justify-between x-gap-40 pb-20">
+                            <div class="col">
+                              <div class="row x-gap-10 y-gap-10">
+                                <div class="col-auto">
+                                  <img
+                                    src="/img/menus/cart/2.png"
+                                    alt="image"
+                                  />
+                                </div>
+
+                                <div class="col">
+                                  <div class="text-dark-1 lh-15">
+                                    User Experience Design Essentials - Adobe XD
+                                    UI UX...
+                                  </div>
+
+                                  <div class="d-flex items-center mt-10">
+                                    <div
+                                      class="lh-12 fw-500 line-through text-light-1 mr-10"
+                                    >
+                                      $179
+                                    </div>
+                                    <div
+                                      class="text-18 lh-12 fw-500 text-dark-1"
+                                    >
+                                      $79
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-auto">
+                              <button>
+                                <img src="/img/menus/close.svg" alt="icon" />
+                              </button>
+                            </div>
+                          </div>
                         </div>
 
-                        <div class="row x-gap-20 y-gap-10 pt-30">
-                          <div class="col-sm-6">
-                            <button class="button py-20 -dark-1 text-white -dark-button-white col-12">View Cart</button>
+                        <div class="px-30 pt-20 pb-30 border-top-light">
+                          <div class="d-flex justify-between">
+                            <div class="text-18 lh-12 text-dark-1 fw-500">
+                              Total:
+                            </div>
+                            <div class="text-18 lh-12 text-dark-1 fw-500">
+                              $659
+                            </div>
                           </div>
-                          <div class="col-sm-6">
-                            <button class="button py-20 -purple-1 text-white col-12">Checkout</button>
+
+                          <div class="row x-gap-20 y-gap-10 pt-30">
+                            <div class="col-sm-6">
+                              <button
+                                class="button py-20 -dark-1 text-white -dark-button-white col-12"
+                              >
+                                View Cart
+                              </button>
+                            </div>
+                            <div class="col-sm-6">
+                              <button
+                                class="button py-20 -purple-1 text-white col-12"
+                              >
+                                Checkout
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+
+                  <div class="d-none xl:d-block pl-20 sm:pl-15">
+                    <button
+                      class="text-dark-1 items-center"
+                      data-el-toggle=".js-mobile-menu-toggle"
+                    >
+                      <i class="text-11 icon icon-mobile-menu"></i>
+                    </button>
+                  </div>
                 </div>
 
-
-                <div class="d-none xl:d-block pl-20 sm:pl-15">
-                  <button class="text-dark-1 items-center" data-el-toggle=".js-mobile-menu-toggle">
-                    <i class="text-11 icon icon-mobile-menu"></i>
+                <div
+                  class="header-right__buttons d-flex items-center ml-30 xl:ml-20 lg:d-none"
+                >
+                  <!-- <a href="#" class="button -underline text-purple-1" id="logout-btn">Log Out</a> -->
+                  <button
+                    type="button"
+                    class="button -underline text-purple-1"
+                    id="logout-btn"
+                  >
+                    Log Out
                   </button>
                 </div>
-
-              </div>
-
-              <div class="header-right__buttons d-flex items-center ml-30 xl:ml-20 lg:d-none">
-                <!-- <a href="#" class="button -underline text-purple-1" id="logout-btn">Log Out</a> -->
-                <button type="button" class="button -underline text-purple-1" id="logout-btn">Log Out</button>
               </div>
             </div>
           </div>
-
         </div>
-      </div>
-    </header>
+      </header>
 
+      <div class="content-wrapper js-content-wrapper">
+        <section class="layout-pt-lg layout-pb-lg">
+          <div class="content">
+            <!-- PROFILE HEADER -->
+            <div class="mt-4 mb-4">
+              <div class="card-custom p-4 shadow-sm">
+                <div class="row align-items-center">
+                  <!-- LEFT SIDE (5 columns) -->
+                  <div class="col-md-5 d-flex align-items-center">
+                    <img
+                      src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                      class="rounded-circle me-4"
+                      style="width: 110px; height: 110px"
+                      alt="Profile"
+                    />
 
-    <div class="content-wrapper  js-content-wrapper">
-      <section class="layout-pt-lg layout-pb-lg">
-        <div data-anim-wrap class="container">
-          <div class="row">
-              <h1>👩‍💻</h1>
-              <h4 class="">Page Under Development.</h4>
-          </div>
-        </div>
-      </section>
+                    <div>
+                      <h2 class="mb-1">John Doe</h2>
 
-      
-
-      <footer class="footer -type-1 bg-purple-1">
-        <div class="container">
-          <div class="py-30">
-            <div class="row justify-between items-center y-gap-20">
-              <div class="col-auto">
-                <div class="d-flex items-center h-100 text-white">
-                  © 2025 Career Hub. All Right Reserved.
-                </div>
-              </div>
-
-              <div class="col-auto">
-                <div class="d-flex x-gap-20 y-gap-20 items-center flex-wrap">
-                  <div>
-                    <div class="d-flex x-gap-15 text-white">
-                      <a href="#">Help</a>
-                      <a href="#">Privacy Policy</a>
-                      <a href="#">Terms of Use</a>
+                      <p class="mb-1">
+                        <i class="ri-mail-line"></i> johndoe@gmail.com
+                      </p>
+                      <p class="mb-1">
+                        <i class="ri-map-pin-line"></i> Mountain View, CA
+                      </p>
+                      <p class="mb-1">
+                        <i class="ri-phone-line"></i> +91 9876543210
+                      </p>
                     </div>
                   </div>
 
-                  <div>
-                    <a href="#" class="button px-30 h-50 -dark-6 rounded-200 text-white">
-                      <i class="icon-worldwide text-20 mr-15"></i><span class="text-15">English</span>
-                    </a>
+                  <!-- RIGHT SIDE (7 columns) -->
+                  <div class="col-md-7">
+                    <h4 class="mb-2">
+                      <i class="ri-bullseye-line"></i> Objective
+                    </h4>
+                    <p class="text-muted">
+                      Passionate MERN developer focused on scalable web apps,
+                      problem-solving, backend optimization, and real-world
+                      project execution.
+                    </p>
+
+                    <h4 class="mb-2">
+                      <i class="ri-briefcase-line"></i> Experience Level
+                    </h4>
+                    <p class="text-muted">
+                      2+ Years of Web Development Experience
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-4">
+              <!-- EDUCATION -->
+              <div class="col-md-6">
+                <div class="card-custom">
+                  <div class="section-title">Education</div>
+
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      <strong>B.Tech - Computer Science</strong><br />
+                      ABC University (2019 - 2023)
+                    </li>
+                    <li class="list-group-item">
+                      <strong>Higher Secondary</strong><br />
+                      XYZ School (2017 - 2019)
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- SKILLS -->
+              <div class="col-md-6">
+                <div class="card-custom" style="min-height: 206px">
+                  <div class="section-title">Skills</div>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">React</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">MongoDB</span>
+                  <span class="tag">Python</span>
+                </div>
+              </div>
+
+              <!-- PROJECT PROGRESS PIE + PROJECT NAMES -->
+              <div class="col-md-6">
+                <div class="card-custom">
+                  <div class="section-title">Project Progress</div>
+
+                  <canvas id="projectPie"></canvas>
+
+                  <br />
+                  <ul>
+                    <li>Portfolio Website – 100%</li>
+                    <li>E-Commerce Backend – 70%</li>
+                    <li>Chat Application – 40%</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- COURSES -->
+              <div class="col-md-6">
+                <div class="card-custom" style="min-height: 488px;">
+                  <div class="section-title">Enrolled Courses</div>
+
+                  <div class="course-item">
+                    <div class="course-header">
+                      <h6>React Mastery</h6>
+                      <small>Author: John Smith</small>
+                    </div>
+                    <div class="progress mb-2" style="height: 8px">
+                      <div
+                        class="progress-bar bg-primary"
+                        style="width: 75%"
+                      ></div>
+                    </div>
+                    <small class="text-muted">75% Completed</small>
+                  </div>
+
+                  <div class="course-item">
+                    <div class="course-header">
+                      <h6>MongoDB Advanced</h6>
+                      <small>Author: Sarah Johnson</small>
+                    </div>
+                    <div class="progress mb-2" style="height: 8px">
+                      <div
+                        class="progress-bar bg-success"
+                        style="width: 40%"
+                      ></div>
+                    </div>
+                    <small class="text-muted">40% Completed</small>
+                  </div>
+
+                  <div class="course-item">
+                    <div class="course-header">
+                      <h6>Node.js Deep Dive</h6>
+                      <small>Author: Michael Lee</small>
+                    </div>
+                    <div class="progress mb-2" style="height: 8px">
+                      <div
+                        class="progress-bar bg-warning"
+                        style="width: 20%"
+                      ></div>
+                    </div>
+                    <small class="text-muted">20% Completed</small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CERTIFICATIONS -->
+              <div class="col-md-12">
+                <div class="card-custom" style="min-height: 168px">
+                  <div class="section-title">Certifications</div>
+                  <span class="tag">React Certificate</span>
+                  <span class="tag">MongoDB Professional</span>
+                  <span class="tag">Node.js Developer</span>
+                </div>
+              </div>
+
+              <!-- JOBS APPLIED -->
+              <div class="col-md-6">
+                <div class="card-custom">
+                  <div class="section-title">Jobs Applied</div>
+
+                  <div class="applied-job-card">
+                    <h6>Software Engineer – Google (USA)</h6>
+                    <small class="job-meta">Applied on: Jan 12, 2025</small>
+                    <div class="job-status-row">
+                      <span class="job-status status-reviewed"
+                        >Status: Reviewed</span
+                      >
+                      <span class="job-viewed viewed-yes"
+                        >Viewed by Recruiter</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="applied-job-card">
+                    <h6>Junior Developer – Microsoft (USA)</h6>
+                    <small class="job-meta">Applied on: Jan 20, 2025</small>
+                    <div class="job-status-row">
+                      <span class="job-status status-pending"
+                        >Status: Under Review</span
+                      >
+                      <span class="job-viewed viewed-no">Not Viewed Yet</span>
+                    </div>
+                  </div>
+
+                  <div class="applied-job-card">
+                    <h6>Backend Engineer – Amazon (USA)</h6>
+                    <small class="job-meta">Applied on: Feb 02, 2025</small>
+                    <div class="job-status-row">
+                      <span class="job-status status-interview"
+                        >Status: Interview Scheduled</span
+                      >
+                      <span class="job-viewed viewed-yes"
+                        >Viewed by Recruiter</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="applied-job-card">
+                    <h6>Full Stack Developer – Meta (USA)</h6>
+                    <small class="job-meta">Applied on: Feb 10, 2025</small>
+                    <div class="job-status-row">
+                      <span class="job-status status-rejected"
+                        >Status: Rejected</span
+                      >
+                      <span class="job-viewed viewed-no">Not Viewed</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- RECOMMENDED JOBS -->
+              <div class="col-md-6">
+                <div class="card-custom" style="min-height: 595px">
+                  <div class="section-title">Recommended Jobs</div>
+
+                  <div class="job-card">
+                    <h6>Frontend Developer</h6>
+                    <small>Google • Mountain View, CA</small>
+                  </div>
+
+                  <div class="job-card">
+                    <h6>Node.js Backend Engineer</h6>
+                    <small>Amazon • Seattle, WA</small>
+                  </div>
+
+                  <div class="job-card">
+                    <h6>Full Stack Developer</h6>
+                    <small>Microsoft • Redmond, WA</small>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </footer>
+        </section>
 
+        <footer class="footer -type-1 bg-purple-1">
+          <div class="container">
+            <div class="py-30">
+              <div class="row justify-between items-center y-gap-20">
+                <div class="col-auto">
+                  <div class="d-flex items-center h-100 text-white">
+                    © 2025 Career Hub. All Right Reserved.
+                  </div>
+                </div>
 
-    </div>
-  </main>
+                <div class="col-auto">
+                  <div class="d-flex x-gap-20 y-gap-20 items-center flex-wrap">
+                    <div>
+                      <div class="d-flex x-gap-15 text-white">
+                        <a href="#">Help</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                      </div>
+                    </div>
 
-  <!-- JavaScript -->
-  <script src="/unpkg.com/leaflet%401.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-  <script src="/js/vendors.js"></script>
-  <script src="/js/main.js"></script>
-  <script src="/js/home.js"></script>
-  <script src="/js/logout.js"></script>
-</body>
+                    <div>
+                      <a
+                        href="#"
+                        class="button px-30 h-50 -dark-6 rounded-200 text-white"
+                      >
+                        <i class="icon-worldwide text-20 mr-15"></i
+                        ><span class="text-15">English</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script
+      src="/unpkg.com/leaflet%401.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <script>
+      const ctx = document.getElementById("projectPie");
+
+      new Chart(ctx, {
+        type: "pie",
+        data: {
+          labels: ["Completed", "In Progress", "Pending"],
+          datasets: [
+            {
+              data: [50, 30, 20], // Update dynamically later
+              borderWidth: 0,
+            },
+          ],
+        },
+      });
+    </script>
+    <script src="/js/vendors.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/logout.js"></script>
+  </body>
 </html>
