@@ -1,299 +1,519 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- Required meta tags -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Google fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com/">
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- <link rel="stylesheet" href="/cdn.jsdelivr.net/npm/choices.js/public/assets/styles/base.min.css" /> -->
-  <link rel="stylesheet" href="/cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+    <!-- <link rel="stylesheet" href="/cdn.jsdelivr.net/npm/choices.js/public/assets/styles/base.min.css" /> -->
+    <link
+      rel="stylesheet"
+      href="/cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    />
 
-  <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
-  <link rel="stylesheet" href="/cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="/unpkg.com/leaflet%401.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="/unpkg.com/leaflet%401.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/vendors.css">
-  <link rel="stylesheet" href="css/main.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/vendors.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+        body {
+  font-family: 'Inter', sans-serif;
+  background: #f7f9fc;
+  color: #1a1a1a;
+}
 
-  <title>Career Hub</title>
-</head>
+/* Banner */
+.course-banner {
+  /* background: linear-gradient(135deg, #6d85ff, #738bff, #5c7afc); */
+  padding: 60px 40px;
+  border-radius: 25px;
+  margin: 30px auto;
+  color: white;
+  text-align: left;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
 
-<body class="preloader-visible" data-barba="wrapper">
-  <!-- preloader start -->
-  <div class="preloader js-preloader">
-    <div class="preloader__bg"></div>
-  </div>
-  <!-- preloader end -->
+.course-banner h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
 
+.course-banner p {
+  font-size: 18px;
+  opacity: 0.95;
+}
 
-  <main class="main-content  ">
+/* Container Width */
+.custom-container {
+  max-width: 1300px;
+  margin: auto;
+}
 
-    <header data-anim="fade" data-add-bg="" class="header -type-4 -shadow bg-white js-header">
+/* Video Card */
+.video-card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  background: #000;
+}
 
+.video-iframe {
+  width: 100%;
+  height: 420px;
+  border: none;
+}
 
-      <div class="header__container border-bottom-light py-10">
-        <div class="row justify-between items-center">
+/* Glassmorphism Card */
+.glass-card {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 25px 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
 
-          <div class="col-auto">
-            <div class="header-left d-flex items-center">
+/* Sidebar Sticky */
+.sticky-card {
+  position: sticky;
+  top: 20px;
+}
 
-              <div class="header__logo pr-30 xl:pr-20 md:pr-0">
-                <a data-barba href="#">
-                  <img width="225px;" src="/img/general/main-logo2.png" alt="logo">
-                </a>
-              </div>
+/* Titles */
+.section-title, .sidebar-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
+.section-text {
+  font-size: 16px;
+  color: #445;
+  line-height: 1.6;
+}
 
-              <div class="header-menu js-mobile-menu-toggle pl-30 xl:pl-20">
-                <div class="header-menu__content">
-                  <div class="mobile-bg js-mobile-bg"></div>
+/* Details List */
+.details-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
 
-                  <div class="d-none xl:d-flex items-center px-20 py-20 border-bottom-light">
-                    <a href="#" class="text-dark-1">Log Out</a>
-                  </div>
+.details-list li {
+  font-size: 16px;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
 
-                  <div class="menu js-navList">
-                    <ul class="menu__nav text-dark-1 -is-active">
-                      <li>
-                        <a href="/dashboard" style="cursor: pointer;">Dashbaord</a>
-                      </li>
+/* Button */
+.start-btn {
+  width: 100%;
+  padding: 14px 0;
+  font-size: 17px;
+  background: #6d85ff;
+  border: none;
+  border-radius: 14px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
 
-                      <li class="-has-mega-menu">
-                        <a href="/profile" style="cursor: pointer;">Profile</a>
-                      </li>
+.start-btn:hover {
+  background: #5c73ff;
+  transform: translateY(-2px);
+}
 
-                      <!-- <li class="-has-mega-menu">
+    </style>
+    <title>Career Hub</title>
+  </head>
+
+  <body class="preloader-visible" data-barba="wrapper">
+    <!-- preloader start -->
+    <div class="preloader js-preloader">
+      <div class="preloader__bg"></div>
+    </div>
+    <!-- preloader end -->
+
+    <main class="main-content">
+      <header
+        data-anim="fade"
+        data-add-bg=""
+        class="header -type-4 -shadow bg-white js-header"
+      >
+        <div class="header__container border-bottom-light py-10">
+          <div class="row justify-between items-center">
+            <div class="col-auto">
+              <div class="header-left d-flex items-center">
+                <div class="header__logo pr-30 xl:pr-20 md:pr-0">
+                  <a data-barba href="#">
+                    <img
+                      width="225px;"
+                      src="/img/general/main-logo2.png"
+                      alt="logo"
+                    />
+                  </a>
+                </div>
+
+                <div class="header-menu js-mobile-menu-toggle pl-30 xl:pl-20">
+                  <div class="header-menu__content">
+                    <div class="mobile-bg js-mobile-bg"></div>
+
+                    <div
+                      class="d-none xl:d-flex items-center px-20 py-20 border-bottom-light"
+                    >
+                      <a href="#" class="text-dark-1">Log Out</a>
+                    </div>
+
+                    <div class="menu js-navList">
+                      <ul class="menu__nav text-dark-1 -is-active">
+                        <li>
+                          <a href="/dashboard" style="cursor: pointer"
+                            >Dashbaord</a
+                          >
+                        </li>
+
+                        <li class="-has-mega-menu">
+                          <a href="/profile" style="cursor: pointer">Profile</a>
+                        </li>
+
+                        <!-- <li class="-has-mega-menu">
                         <a href="#" style="cursor: pointer;">Courses</a>
                       </li> -->
 
-                      <li class="-has-mega-menu">
-                        <a href="/mylearnings" style="cursor: pointer;">My Learnings</a>
-                      </li>
+                        <li class="-has-mega-menu">
+                          <a href="/mylearnings" style="cursor: pointer"
+                            >My Learnings</a
+                          >
+                        </li>
 
-                       <li class="-has-mega-menu">
-                        <a href="/portfolio" style="cursor: pointer;">Portfolio</a>
-                      </li>
+                        <li class="-has-mega-menu">
+                          <a href="/portfolio" style="cursor: pointer"
+                            >Portfolio</a
+                          >
+                        </li>
 
-                      <li class="-has-mega-menu">
-                          <a href="/businessprojects" style="cursor: pointer">Business Projects</a>
-                      </li>
+                        <li class="-has-mega-menu">
+                          <a href="/businessprojects" style="cursor: pointer"
+                            >Business Projects</a
+                          >
+                        </li>
 
-                      <li class="">
-                        <a href="#">Free Lance Jobs</a>
-                      </li>
+                        <li class="">
+                          <a href="#">Free Lance Jobs</a>
+                        </li>
                       </ul>
+                    </div>
                   </div>
-                </div>
 
-                <div class="header-menu-close" data-el-toggle=".js-mobile-menu-toggle">
-                  <div class="size-40 d-flex items-center justify-center rounded-full bg-white">
-                    <div class="icon-close text-dark-1 text-16"></div>
+                  <div
+                    class="header-menu-close"
+                    data-el-toggle=".js-mobile-menu-toggle"
+                  >
+                    <div
+                      class="size-40 d-flex items-center justify-center rounded-full bg-white"
+                    >
+                      <div class="icon-close text-dark-1 text-16"></div>
+                    </div>
                   </div>
-                </div>
 
-                <div class="header-menu-bg"></div>
+                  <div class="header-menu-bg"></div>
+                </div>
               </div>
-
             </div>
-          </div>
 
-
-          <div class="col-auto">
-            <div class="header-right d-flex items-center">
-              <div class="header-right__icons text-white d-flex items-center">
-                <div class="header-search-field">
-                  <form action="#">
-                    <div class="header-search-field__group">
-                      <input type="text" placeholder="What do you want to learn?">
-                      <button type="submit">
-                        <i class="icon icon-search"></i>
-                      </button>
-                    </div>
-                  </form>
-                </div>
-
-
-                <div class="relative -after-border pl-20 sm:pl-15">
-                  <div class="toggle-element js-cart-toggle">
-                    <div class="header-cart bg-white -dark-bg-dark-1 rounded-8">
-                      <div class="px-30 pt-30 pb-10">
-
-                        <div class="row justify-between x-gap-40 pb-20">
-                          <div class="col">
-                            <div class="row x-gap-10 y-gap-10">
-                              <div class="col-auto">
-                                <img src="/img/menus/cart/1.png" alt="image">
-                              </div>
-
-                              <div class="col">
-                                <div class="text-dark-1 lh-15">The Ultimate Drawing Course Beginner to Advanced...</div>
-
-                                <div class="d-flex items-center mt-10">
-                                  <div class="lh-12 fw-500 line-through text-light-1 mr-10">$179</div>
-                                  <div class="text-18 lh-12 fw-500 text-dark-1">Free</div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="col-auto">
-                            <button><img src="/img/menus/close.svg" alt="icon"></button>
-                          </div>
-                        </div>
-
-                        <div class="row justify-between x-gap-40 pb-20">
-                          <div class="col">
-                            <div class="row x-gap-10 y-gap-10">
-                              <div class="col-auto">
-                                <img src="/img/menus/cart/2.png" alt="image">
-                              </div>
-
-                              <div class="col">
-                                <div class="text-dark-1 lh-15">User Experience Design Essentials - Adobe XD UI UX...</div>
-
-                                <div class="d-flex items-center mt-10">
-                                  <div class="lh-12 fw-500 line-through text-light-1 mr-10">$179</div>
-                                  <div class="text-18 lh-12 fw-500 text-dark-1">$79</div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="col-auto">
-                            <button><img src="/img/menus/close.svg" alt="icon"></button>
-                          </div>
-                        </div>
-
+            <div class="col-auto">
+              <div class="header-right d-flex items-center">
+                <div class="header-right__icons text-white d-flex items-center">
+                  <div class="header-search-field">
+                    <form action="#">
+                      <div class="header-search-field__group">
+                        <input
+                          type="text"
+                          placeholder="What do you want to learn?"
+                        />
+                        <button type="submit">
+                          <i class="icon icon-search"></i>
+                        </button>
                       </div>
+                    </form>
+                  </div>
 
-                      <div class="px-30 pt-20 pb-30 border-top-light">
-                        <div class="d-flex justify-between">
-                          <div class="text-18 lh-12 text-dark-1 fw-500">Total:</div>
-                          <div class="text-18 lh-12 text-dark-1 fw-500">$659</div>
+                  <div class="relative -after-border pl-20 sm:pl-15">
+                    <div class="toggle-element js-cart-toggle">
+                      <div
+                        class="header-cart bg-white -dark-bg-dark-1 rounded-8"
+                      >
+                        <div class="px-30 pt-30 pb-10">
+                          <div class="row justify-between x-gap-40 pb-20">
+                            <div class="col">
+                              <div class="row x-gap-10 y-gap-10">
+                                <div class="col-auto">
+                                  <img
+                                    src="/img/menus/cart/1.png"
+                                    alt="image"
+                                  />
+                                </div>
+
+                                <div class="col">
+                                  <div class="text-dark-1 lh-15">
+                                    The Ultimate Drawing Course Beginner to
+                                    Advanced...
+                                  </div>
+
+                                  <div class="d-flex items-center mt-10">
+                                    <div
+                                      class="lh-12 fw-500 line-through text-light-1 mr-10"
+                                    >
+                                      $179
+                                    </div>
+                                    <div
+                                      class="text-18 lh-12 fw-500 text-dark-1"
+                                    >
+                                      Free
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-auto">
+                              <button>
+                                <img src="/img/menus/close.svg" alt="icon" />
+                              </button>
+                            </div>
+                          </div>
+
+                          <div class="row justify-between x-gap-40 pb-20">
+                            <div class="col">
+                              <div class="row x-gap-10 y-gap-10">
+                                <div class="col-auto">
+                                  <img
+                                    src="/img/menus/cart/2.png"
+                                    alt="image"
+                                  />
+                                </div>
+
+                                <div class="col">
+                                  <div class="text-dark-1 lh-15">
+                                    User Experience Design Essentials - Adobe XD
+                                    UI UX...
+                                  </div>
+
+                                  <div class="d-flex items-center mt-10">
+                                    <div
+                                      class="lh-12 fw-500 line-through text-light-1 mr-10"
+                                    >
+                                      $179
+                                    </div>
+                                    <div
+                                      class="text-18 lh-12 fw-500 text-dark-1"
+                                    >
+                                      $79
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-auto">
+                              <button>
+                                <img src="/img/menus/close.svg" alt="icon" />
+                              </button>
+                            </div>
+                          </div>
                         </div>
 
-                        <div class="row x-gap-20 y-gap-10 pt-30">
-                          <div class="col-sm-6">
-                            <button class="button py-20 -dark-1 text-white -dark-button-white col-12">View Cart</button>
+                        <div class="px-30 pt-20 pb-30 border-top-light">
+                          <div class="d-flex justify-between">
+                            <div class="text-18 lh-12 text-dark-1 fw-500">
+                              Total:
+                            </div>
+                            <div class="text-18 lh-12 text-dark-1 fw-500">
+                              $659
+                            </div>
                           </div>
-                          <div class="col-sm-6">
-                            <button class="button py-20 -purple-1 text-white col-12">Checkout</button>
+
+                          <div class="row x-gap-20 y-gap-10 pt-30">
+                            <div class="col-sm-6">
+                              <button
+                                class="button py-20 -dark-1 text-white -dark-button-white col-12"
+                              >
+                                View Cart
+                              </button>
+                            </div>
+                            <div class="col-sm-6">
+                              <button
+                                class="button py-20 -purple-1 text-white col-12"
+                              >
+                                Checkout
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+
+                  <div class="d-none xl:d-block pl-20 sm:pl-15">
+                    <button
+                      class="text-dark-1 items-center"
+                      data-el-toggle=".js-mobile-menu-toggle"
+                    >
+                      <i class="text-11 icon icon-mobile-menu"></i>
+                    </button>
+                  </div>
                 </div>
 
-
-                <div class="d-none xl:d-block pl-20 sm:pl-15">
-                  <button class="text-dark-1 items-center" data-el-toggle=".js-mobile-menu-toggle">
-                    <i class="text-11 icon icon-mobile-menu"></i>
+                <div
+                  class="header-right__buttons d-flex items-center ml-30 xl:ml-20 lg:d-none"
+                >
+                  <!-- <a href="#" class="button -underline text-purple-1" id="logout-btn">Log Out</a> -->
+                  <button
+                    type="button"
+                    class="button -underline text-purple-1"
+                    id="logout-btn"
+                  >
+                    Log Out
                   </button>
                 </div>
-
-              </div>
-
-              <div class="header-right__buttons d-flex items-center ml-30 xl:ml-20 lg:d-none">
-                <!-- <a href="#" class="button -underline text-purple-1" id="logout-btn">Log Out</a> -->
-                <button type="button" class="button -underline text-purple-1" id="logout-btn">Log Out</button>
               </div>
             </div>
           </div>
-
         </div>
-      </div>
-    </header>
+      </header>
 
+      <div class="content-wrapper js-content-wrapper">
+        <section class="layout-pt-lg layout-pb-lg">
+          
 
-    <div class="content-wrapper  js-content-wrapper">
-      <section class="layout-pt-lg layout-pb-lg">
-        <div class="container py-5">
+<div class="container" style="padding: 40px 0px;">
+  <h1 id="courseTitle" style="padding-bottom: 20px;"></h1>
+  <p id="courseSubtitle">Master this course with structured, step-by-step content</p>
+</div>
 
-  <h2 id="courseTitle" class="fw-bold mb-4"></h2>
+<div class="container">
 
-  <div class="row">
+  <div class="row gx-5">
+    <!-- Left Content -->
     <div class="col-lg-8">
 
-      <!-- YouTube Player -->
-      <div class="ratio ratio-16x9 mb-4">
-        <iframe id="courseVideo" style="width: 100%; height: 450px;" src="https://www.youtube.com/embed/jeXMc0C_J7E?si=8OXbX-vWu7OX4edT" allowfullscreen></iframe>
+      <!-- Video Player -->
+      <div class="video-card">
+        <iframe id="courseVideo" class="video-iframe" allowfullscreen></iframe>
       </div>
 
       <!-- Description -->
-      <div class="card shadow-sm">
-        <h4>Description</h4>
-        <p id="courseDescription"></p>
+      <div class="glass-card mt-4">
+        <div class="section-title">
+          <span>📘</span> Course Description
+        </div>
+        <p id="courseDescription" class="section-text"></p>
       </div>
 
     </div>
 
+    <!-- Right Sidebar -->
     <div class="col-lg-4">
-      <div class="card p-4 shadow-sm">
-        <h5 class="fw-bold mb-3">Course Details</h5>
+      <div class="glass-card p-4 sticky-card">
 
-        <p><strong>Lessons:</strong> <span id="lessons"></span></p>
-        <p><strong>Duration:</strong> <span id="duration"></span></p>
-        <p><strong>Level:</strong> <span id="level"></span></p>
+        <h4 class="sidebar-title">
+          <span>📊</span> Course Details
+        </h4>
 
-        <button class="btn btn-primary w-100">Start Learning</button>
+        <ul class="details-list">
+          <li><strong>Lessons:</strong> <span id="lessons"></span></li>
+          <li><strong>Duration:</strong> <span id="duration"></span></li>
+          <li><strong>Level:</strong> <span id="level"></span></li>
+        </ul>
+
+        <!-- <button class="start-btn">Start Learning 🚀</button> -->
       </div>
     </div>
   </div>
-
 </div>
-      </section>
 
-      
+        </section>
 
-      <footer class="footer -type-1 bg-purple-1">
-        <div class="container">
-          <div class="py-30">
-            <div class="row justify-between items-center y-gap-20">
-              <div class="col-auto">
-                <div class="d-flex items-center h-100 text-white">
-                  © 2025 Career Hub. All Right Reserved.
-                </div>
-              </div>
-
-              <div class="col-auto">
-                <div class="d-flex x-gap-20 y-gap-20 items-center flex-wrap">
-                  <div>
-                    <div class="d-flex x-gap-15 text-white">
-                      <a href="#">Help</a>
-                      <a href="#">Privacy Policy</a>
-                      <a href="#">Terms of Use</a>
-                    </div>
+        <footer class="footer -type-1 bg-purple-1">
+          <div class="container">
+            <div class="py-30">
+              <div class="row justify-between items-center y-gap-20">
+                <div class="col-auto">
+                  <div class="d-flex items-center h-100 text-white">
+                    © 2025 Career Hub. All Right Reserved.
                   </div>
+                </div>
 
-                  <div>
-                    <a href="#" class="button px-30 h-50 -dark-6 rounded-200 text-white">
-                      <i class="icon-worldwide text-20 mr-15"></i><span class="text-15">English</span>
-                    </a>
+                <div class="col-auto">
+                  <div class="d-flex x-gap-20 y-gap-20 items-center flex-wrap">
+                    <div>
+                      <div class="d-flex x-gap-15 text-white">
+                        <a href="#">Help</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                      </div>
+                    </div>
+
+                    <div>
+                      <a
+                        href="#"
+                        class="button px-30 h-50 -dark-6 rounded-200 text-white"
+                      >
+                        <i class="icon-worldwide text-20 mr-15"></i
+                        ><span class="text-15">English</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
+    </main>
 
-
-    </div>
-  </main>
-
-  <!-- JavaScript -->
-  <script src="/unpkg.com/leaflet%401.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-  <script src="/js/vendors.js"></script>
-  <script src="/js/main.js"></script>
-  <script src="/js/home.js"></script>
-  <script src="/js/course.js"></script>
-  <script src="/js/logout.js"></script>
-</body>
+    <!-- JavaScript -->
+    <script
+      src="/unpkg.com/leaflet%401.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <script src="/js/vendors.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/course.js"></script>
+    <script src="/js/logout.js"></script>
+  </body>
 </html>
