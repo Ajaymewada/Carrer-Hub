@@ -22,16 +22,6 @@
   <link rel="stylesheet" href="css/main.css">
 
   <title>Career Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
-    .mba-modern-container ul li{
-        list-style-type: disclosure-open !important;
-        padding-bottom: 10px;
-    }
-  </style>
 </head>
 
 <body class="preloader-visible" data-barba="wrapper">
@@ -223,150 +213,42 @@
 
 
     <div class="content-wrapper  js-content-wrapper">
-
       <section class="layout-pt-lg layout-pb-lg">
-    <div data-anim-wrap class="container">
-        <div data-anim-child="slide-left delay-1" class="mba-modern-container row y-gap-20 justify-between items-center is-in-view">
-            <div class="col-lg-12">
+        <div class="container py-5">
 
-                <div class="sectionTitle">
-                    <h2 class="sectionTitle__title">Predicting Customer Churn Rating</h2>
-                    <p class="sectionTitle__text">
-                        Analyze customer behaviour patterns to predict churn risk and identify retention opportunities.
-                    </p>
-                </div>
+  <h2 id="courseTitle" class="fw-bold mb-4"></h2>
 
-            </div>
-        </div>
+  <div class="row">
+    <div class="col-lg-8">
 
-        <div class="mba-modern-container">
+      <!-- YouTube Player -->
+      <div class="ratio ratio-16x9 mb-4">
+        <iframe id="courseVideo" style="width: 100%; height: 450px;" src="https://www.youtube.com/embed/jeXMc0C_J7E?si=8OXbX-vWu7OX4edT" allowfullscreen></iframe>
+      </div>
 
-            <!-- DESCRIPTION -->
-            <div class="mba-modern-card full-row">
-                <h3>Description</h3>
-                <p>
-                    Predicting Customer Churn Rating is a machine learning project focused on identifying customers 
-                    who are likely to discontinue a service. By analysing behavioural, demographic, transactional, 
-                    and usage-based factors, the project assigns a churn probability score to each customer, helping 
-                    businesses proactively retain valuable users.
-                </p>
-            </div>
+      <!-- Description -->
+      <div class="card shadow-sm">
+        <h4>Description</h4>
+        <p id="courseDescription"></p>
+      </div>
 
-            <!-- OBJECTIVE -->
-            <div class="mba-modern-card full-row">
-                <h3>Objective</h3>
-                <p>
-                    To build a predictive model that estimates customer churn risk, enabling companies to implement 
-                    targeted retention strategies, reduce revenue loss, improve customer satisfaction, and strengthen 
-                    long-term loyalty. The objective also includes identifying the key drivers behind churn behaviour.
-                </p>
-            </div>
-
-            <div class="mba-modern-grid">
-
-                <!-- Tools -->
-                <div class="mba-modern-card">
-                    <h3>Tools</h3>
-                    <ul>
-                        <li>Python (Pandas, NumPy, Scikit-Learn)</li>
-                        <li>Jupyter Notebook / VS Code</li>
-                        <li>Tableau / Power BI for visualization</li>
-                        <li>SQL for data extraction</li>
-                    </ul>
-                </div>
-
-                <!-- Data Alignment -->
-                <div class="mba-modern-card">
-                    <h3>Data Alignment</h3>
-                    <ul>
-                        <li>Customer demographic data</li>
-                        <li>Subscription & usage behaviour</li>
-                        <li>Support interactions & complaints</li>
-                        <li>Payment history & plan information</li>
-                    </ul>
-                </div>
-
-                <!-- Key Concepts -->
-                <div class="mba-modern-card">
-                    <h3>Key Concepts</h3>
-                    <ul>
-                        <li>Classification modeling (Logistic Regression, Random Forest, XGBoost)</li>
-                        <li>Feature engineering for behavioural patterns</li>
-                        <li>Churn scoring & rating system design</li>
-                        <li>Confusion matrix, ROC-AUC, Precision/Recall</li>
-                    </ul>
-                </div>
-
-                <!-- Project Assets -->
-                <div class="mba-modern-card">
-                    <h3>Project Assets</h3>
-                    <ul>
-                        <li>Cleaned & engineered dataset</li>
-                        <li>Churn rating prediction model</li>
-                        <li>Feature importance insights</li>
-                        <li>Interactive churn analytics dashboard</li>
-                    </ul>
-                </div>
-
-                <!-- Deliverables -->
-                <div class="mba-modern-card">
-                    <h3>Deliverables</h3>
-                    <ul>
-                        <li>Churn probability model with rating categories</li>
-                        <li>Customer segmentation by churn risk</li>
-                        <li>Retention strategy recommendations</li>
-                        <li>Visual reports & KPI dashboards</li>
-                    </ul>
-                </div>
-
-                <!-- Estimated Time -->
-                <div class="mba-modern-card">
-                    <h3>Estimated Completion Time</h3>
-                    <p class="big-text">10–12 hours</p>
-                </div>
-
-                <!-- Dataset -->
-                <div class="mba-modern-card">
-                    <h3>Dataset</h3>
-                    <ul>
-                        <li>Customer profile & demographic data</li>
-                        <li>Service usage logs</li>
-                        <li>Contract & billing details</li>
-                        <li>Customer support interaction records</li>
-                    </ul>
-                    <a href="/Business_Analyst_Predicting_Customer_Churn.docx" download>
-                        <button class="mba-download-btn">Download</button>
-                    </a>
-                </div>
-
-                <!-- Impact Metrics -->
-                <div class="mba-modern-card">
-                    <h3>Impact Metrics</h3>
-                    <ul>
-                        <li>Lower churn rate & customer retention uplift</li>
-                        <li>Revenue protection from high-risk accounts</li>
-                        <li>Improved targeting of retention campaigns</li>
-                        <li>Better understanding of churn drivers</li>
-                    </ul>
-                </div>
-
-                <!-- Certification -->
-                <div class="mba-modern-card">
-                    <h3>Certification Earned</h3>
-                    <div class="cert-space">
-                        <ul>
-                            <li>Customer Churn Prediction Analyst</li>
-                            <li>Data Science & Machine Learning Certification</li>
-                            <li>Customer Behaviour Analytics Certificate</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
     </div>
-</section>
 
+    <div class="col-lg-4">
+      <div class="card p-4 shadow-sm">
+        <h5 class="fw-bold mb-3">Course Details</h5>
+
+        <p><strong>Lessons:</strong> <span id="lessons"></span></p>
+        <p><strong>Duration:</strong> <span id="duration"></span></p>
+        <p><strong>Level:</strong> <span id="level"></span></p>
+
+        <button class="btn btn-primary w-100">Start Learning</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+      </section>
 
       
 
@@ -411,6 +293,7 @@
   <script src="/js/vendors.js"></script>
   <script src="/js/main.js"></script>
   <script src="/js/home.js"></script>
+  <script src="/js/course.js"></script>
   <script src="/js/logout.js"></script>
 </body>
 </html>

@@ -8,8 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
   const title = document.getElementById("user_name");
+  const title1 = document.getElementById("username");
+  const title2 = document.getElementById("username2");
   const user = JSON.parse(userData);
 //   console.log(user)
-  
+  title1.textContent = `Welcome back, ${user.username}`
+  title2.textContent = `Welcome back, ${user.username}`
   title.textContent = `Welcome Back ${user.username}`
 });

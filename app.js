@@ -31,8 +31,8 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "index.html"));
 });
 
-app.get("/home", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "home.html"));
+app.get("/dashboard", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "dashboard.html"));
 });
 
 app.get("/login", (req, res) => {
@@ -69,6 +69,14 @@ app.get("/addeditproject", (req, res) => {
 
 app.get("/projectview", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "projectview.html"));
+});
+
+app.get("/mylearnings", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "allcourses.html"));
+});
+
+app.get("/course", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "course.html"));
 });
 
 // Connect to MongoDB Atlas
